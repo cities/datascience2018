@@ -32,18 +32,6 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 
 ### Part I: Data Science Best Practices
 1. Overview and Introduction
-    1. Install the latest [R](https://ftp.osuosl.org/pub/cran/) and [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/) free version
-    1. R teasers: 
-        - [Free, as in beer & speech](https://www.r-project.org/about.html)
-        - [More than 13,000 packages and counting](https://www.rdocumentation.org/trends)
-        - [Graphics Gallery](http://www.r-graph-gallery.com/)
-        - [Interactive Web Apps: Interactive Plots, Dashboard, Widget ...](https://shiny.rstudio.com/gallery/)
-    1. [Introduction to R and RStudio](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/)
-    1. [Project Management With RStudio](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/)
-    1. [Seeking help](http://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/)
-    1. Code Style Guide
-        1. [Google's R style guide](https://google.github.io/styleguide/Rguide.xml)
-        1. [Hadley Wickham's code style guide](http://adv-r.had.co.nz/Style.html)
 1. R Coding Basics
     1. [Data Structures](http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/)
     1. [Exploring Data Frames](http://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2/)
