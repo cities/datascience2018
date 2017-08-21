@@ -1,0 +1,23 @@
+name: "Introduction to Data Science"
+navbar:
+  title: "Introduction to Data Science Summer 2017"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
+    mathjax: null
+    toc_depth: 3
+    toc_float:
+      collapsed: false
+    includes:
+      in_header: include_head.html
+      #before_body: include_header.html
+      #after_body: include_footer.html
+    css: css/rmarkdown.css
+output_dir: "."
