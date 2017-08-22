@@ -9,9 +9,20 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Installation
+# Set up your computer
 
-Install [R 3.4.1](https://ftp.osuosl.org/pub/cran/) and [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/) free version for your operating system.
+## Installation
+- Install R 3.4.1 from https://ftp.osuosl.org/pub/cran/ . (Requires administrator privellege)
+- Install RStudio Desktop free version from https://www.rstudio.com/products/rstudio/download/
+- Follow [these steps](03-git.html#install-git) to install Git for Windows. (Requires administrator privellege)
+
+## Installation Verification 
+1. Launch RStudio and you should see a program window like this: <center><img src="http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png"></center>
+1. Click the **File** menu, select **New Project...**, then **Version Control** and **Git**;
+1. Copy & paste this URL: https://github.com/cities/datascience2017.git into the the Repository URL textbox; 
+1. Click **Create Project**.
+
+If you see a popup box that says "Clone Repsitory" with a progress bar and then RStudio refreshes, then your installation is working.
 
 # Why R
 

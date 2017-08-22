@@ -13,7 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Version Control with Git
 
-## Install Git for Windows
+## Install Git {#install-git}
+
+### for windows
 1. Download the Git for Windows installer.
 1. Run the installer and follow the steps bellow:
     1. Click on "Next".
@@ -31,9 +33,11 @@ knitr::opts_chunk$set(echo = TRUE)
     1. Press [Enter], you should see `SUCCESS: Specified value was saved`.
     1. Quit command prompt by typing exit then pressing [Enter]
 
-For Mac, install [git-osx-installer](https://sourceforge.net/projects/git-osx-installer/files/).
+### For Mac 
+Install [git-osx-installer](https://sourceforge.net/projects/git-osx-installer/files/).
 
-For Linux, install `git' from your distro's package manager.
+### For Linux 
+install `git' from your distro's package manager.
 
 ## Lesson
 [Version Control with Git](http://swcarpentry.github.io/git-novice/)
