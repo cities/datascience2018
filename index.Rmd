@@ -20,8 +20,8 @@ panderOptions('keep.trailing.zeros', TRUE)
 panderOptions('keep.line.breaks', TRUE)
 ```
 
-Course Website: https://cities.github.io/datascience2017
-GitHub repository: https://github.com/cities/datascience2017
+- Course Website: https://cities.github.io/datascience2017
+- GitHub repository: https://github.com/cities/datascience2017
 
 # Syllabus
 
@@ -88,11 +88,7 @@ For Python users, Wes McKinney’s book is recommended:
 
 Journal articles and online resources are used as supplements to the textbook.
 
-## License
-
-The course materials are made available under the [Creative Commons Attribution license](https://creativecommons.org/licenses/by/4.0/).
-
-## Acknowledgements
+# Acknowledgements
 
 This course is developed with support from National Institute of Transportation and Communities project #854.
 
@@ -104,8 +100,11 @@ Parts of the course materials have been adpated from the following sources:
 
 - [R for Data Science](https://github.com/hadley/r4ds) by Hadley Wickham
 - [Software Carpentry workshop lessons](https://software-carpentry.org/lessons/)
-- [Data Carpentry workshop lessons](http://www.datacarpentry.org/)
 - [UBC Stat 545](http://stat545.com) by Professor Jenny Bryan at UBC
 - [NEU 5110 Introduction to Data Science](http://janvitek.org/events/NEU/5110/) by Professor Jan Vitek
 
 The writing-up and website is powered by the [bookdown](https://bookdown.org) package and [github](https://www.github.com).
+
+# License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
