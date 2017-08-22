@@ -1,0 +1,43 @@
+---
+title: "Overview and Introduction"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Installation
+
+Install [R 3.4.1](https://ftp.osuosl.org/pub/cran/) and [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/) free version for your operating system.
+
+# Why R
+
+- [Free, as in beer & speech](https://www.r-project.org/about.html)
+- Powerful and flexible
+- Large and growing community
+- [More than 13,000 packages and counting](https://www.rdocumentation.org/trends)
+- [Graphics Gallery](http://www.r-graph-gallery.com/)
+- [Interactive Web Apps: Interactive Plots, Dashboard, Widget ...](https://shiny.rstudio.com/gallery/)
+
+# Introduction to R and RStudio
+1. [Introduction to R and RStudio](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/)
+1. [Project Management With RStudio](http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/)
+1. [Seeking help](http://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/)
+    
+# Class project
+
+For the class project, you are expected to create a R package with the following requirements and commit it to GitHub:
+1. Contains at least one self-contained function;
+1. Completed with necessary documentation;
+1. Passes R package check and test(s);
+1. [Advanced] includes a vignette that demonstrates the usage of the package.
+
+You can use code from your current work or start from scratch. Take the feasibility of completing in a week into consideration when selecting ideas.
+        
+If you don't have a feasible project idea at the moment, consider writing a R package that visualizes the bike counts on Hawthorne and Tilikum. Daily traffic counts data for these two bridges can be found [here](https://github.com/cities/datascience2017/data). At the minimum, your package should be able to:
+- Visualize bike counts on either or both bridges based on the data frame passed in;
+- Plot daily bike counts for any specified period;
+- [Advanced] Plot daily, weekly, or monthly bike counts based on an frequency argument.

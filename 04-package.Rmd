@@ -1,0 +1,22 @@
+---
+title: "Creating R Package"
+#author: "Liming Wang"
+#date: "8/21/2017"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+1. [Making Your First R Package by Fong Chun Chan](http://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html)
+1. [Developing Packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
+
+# R package checklist
+
+
+# Resources:
+1. [R Package by Hadley Wickham](http://r-pkgs.had.co.nz/)
+

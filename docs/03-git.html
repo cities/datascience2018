@@ -11,7 +11,7 @@
 
 
 
-<title>About the Course</title>
+<title>Version Control with Git</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -210,29 +210,50 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">About the Course</h1>
+<h1 class="title toc-ignore">Version Control with Git</h1>
 
 </div>
 
 
-<div id="acknowledgements" class="section level1">
-<h1>Acknowledgements</h1>
-<p>This course is developed with support from National Institute of Transportation and Communities project #854.</p>
-<div style="width:300px">
-<p><a href="http://nitc.trec.pdx.edu/"><img src="http://nitc.trec.pdx.edu/sites/default/files/nitc_4c_horiz_tag.jpg" alt="NITC" /></a></p>
+<div id="version-control-with-git" class="section level1">
+<h1>Version Control with Git</h1>
+<div id="install-git-for-windows" class="section level2">
+<h2>Install Git for Windows</h2>
+<ol style="list-style-type: decimal">
+<li>Download the Git for Windows installer.</li>
+<li>Run the installer and follow the steps bellow:
+<ol style="list-style-type: decimal">
+<li>Click on “Next”.</li>
+<li>Click on “Next”.</li>
+<li>Keep “<strong>Use Git from the Windows Command Prompt</strong>” selected and click on “Next”. If you forgot to do this, rerun the installer and select the appropriate option.</li>
+<li>Click on “Next”.</li>
+<li>Keep “<strong>Checkout Windows-style, commit Unix-style line endings</strong>” selected and click on “Next”.</li>
+<li>Keep “<strong>Use Windows’ default console window</strong>” selected and click on “Next”.</li>
+<li>Click on “Install”.</li>
+<li>Click on “Finish”.</li>
+</ol></li>
+<li>If your “HOME” environment variable is not set (or you don’t know what this is):
+<ol style="list-style-type: decimal">
+<li>Open command prompt (Open Start Menu then type cmd and press [Enter])</li>
+<li>Type the following line into the command prompt window exactly as shown: <code>setx HOME &quot;%USERPROFILE%&quot;</code></li>
+<li>Press [Enter], you should see <code>SUCCESS: Specified value was saved</code>.</li>
+<li>Quit command prompt by typing exit then pressing [Enter]</li>
+</ol></li>
+</ol>
+<p>For Mac, install <a href="https://sourceforge.net/projects/git-osx-installer/files/">git-osx-installer</a>.</p>
+<p>For Linux, install `git’ from your distro’s package manager.</p>
 </div>
-<p>Parts of the course materials have been adpated from the following sources:</p>
-<ul>
-<li><a href="https://github.com/hadley/r4ds">R for Data Science</a> by Hadley Wickham</li>
-<li><a href="https://software-carpentry.org/lessons/">Software Carpentry workshop lessons</a></li>
-<li><a href="http://stat545.com">UBC Stat 545</a> by Professor Jenny Bryan at UBC</li>
-<li><a href="http://janvitek.org/events/NEU/5110/">NEU 5110 Introduction to Data Science</a> by Professor Jan Vitek</li>
-</ul>
-<p>The writing-up and website is powered by the <a href="https://bookdown.org">bookdown</a> package and <a href="https://www.github.com">github</a>.</p>
+<div id="lesson" class="section level2">
+<h2>Lesson</h2>
+<p><a href="http://swcarpentry.github.io/git-novice/">Version Control with Git</a></p>
 </div>
-<div id="license" class="section level1">
-<h1>License</h1>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+</div>
+<div id="resources" class="section level1">
+<h1>Resources:</h1>
+<ol style="list-style-type: decimal">
+<li><a href="http://happygitwithr.com/">Happy Git with R</a></li>
+<li><a href="https://try.github.io">try Git</a></li>
+</ol>
 </div>
 
 

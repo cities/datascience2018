@@ -1,0 +1,44 @@
+---
+title: "Version Control with Git"
+#author: "Liming Wang"
+#date: "8/21/2017"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Version Control with Git
+
+## Install Git for Windows
+1. Download the Git for Windows installer.
+1. Run the installer and follow the steps bellow:
+    1. Click on "Next".
+    1. Click on "Next".
+    1. Keep "**Use Git from the Windows Command Prompt**" selected and click on "Next". If you forgot to do this, rerun the installer and select the appropriate option.
+    1. Click on "Next".
+    1. Keep "**Checkout Windows-style, commit Unix-style line endings**" selected and click on "Next".
+    1. Keep "**Use Windows' default console window**" selected and click on "Next".
+    1. Click on "Install".
+    1. Click on "Finish".
+1. If your "HOME" environment variable is not set (or you don't know what this is):
+    1. Open command prompt (Open Start Menu then type cmd and press [Enter])
+    1. Type the following line into the command prompt window exactly as shown:
+         `setx HOME "%USERPROFILE%"`
+    1. Press [Enter], you should see `SUCCESS: Specified value was saved`.
+    1. Quit command prompt by typing exit then pressing [Enter]
+
+For Mac, install [git-osx-installer](https://sourceforge.net/projects/git-osx-installer/files/).
+
+For Linux, install `git' from your distro's package manager.
+
+## Lesson
+[Version Control with Git](http://swcarpentry.github.io/git-novice/)
+
+# Resources:
+1. [Happy Git with R](http://happygitwithr.com/)
+1. [try Git](https://try.github.io)
+

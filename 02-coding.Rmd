@@ -1,0 +1,49 @@
+---
+title: "R Coding Basics"
+#author: "Liming Wang"
+#date: "8/21/2017"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Coding Basics
+
+This section assumes students know little about R and gets them up to speed with the basics
+
+1. [Data Structures](http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/)
+  - How can I read data in R? 
+  - What are the basic data types in R? 
+  - How do I represent categorical information in R?
+1. [Exploring Data Frames](http://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2/)
+  - How can I manipulate a data frame?
+1. [Subsetting Data](http://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/)
+  - How can I work with subsets of data in R?
+1. [Control Flow](http://swcarpentry.github.io/r-novice-gapminder/07-control-flow/)
+  - How can I work with subsets of data in R?
+1. [Visualization with ggplot2](http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/)
+  - How can I create publication-quality graphics in R?
+1. [Vectorization](http://swcarpentry.github.io/r-novice-gapminder/09-vectorization/)
+  - How can I operate on all the elements of a vector at once?
+1. [Functions Explained](http://swcarpentry.github.io/r-novice-gapminder/10-functions/)
+  - How can I write a new function in R? 
+1. [Writing Good Software](http://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/)
+  - How can I write software that other people can use?
+
+# Code Style Guide
+
+In programming as in writing, it is generally a good idea to stick to a consitent coding style. There are two style guides that you can adopt or customize to create your own:
+- [Google's R style guide](https://google.github.io/styleguide/Rguide.xml)
+- [Hadley Wickham's code style guide](http://adv-r.had.co.nz/Style.html)
+
+# Debugging with RStudio
+
+This section is adapted from [Visual Debugging with RStudio](http://www.milanor.net/blog/visual-debugging-with-rstudio/).
+
+# Resources:
+- [Introduction to R on Data Camp](https://campus.datacamp.com/courses/free-introduction-to-r/chapter-1-intro-to-basics-1?ex=1): A self-instruction course covering R basics.
+- 

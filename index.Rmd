@@ -21,6 +21,7 @@ panderOptions('keep.line.breaks', TRUE)
 ```
 
 Course Website: https://cities.github.io/datascience2017
+GitHub repository: https://github.com/cities/datascience2017
 
 # Syllabus
 
@@ -31,29 +32,11 @@ Did you ever feel you are “drinking from a hose” with the amount of data you
 The table below shows by date lecture topics, computer labs, and readings, and dates that assignments will be handed out and due. Supplement readings will be posted on course website. Topics are subject to adjustment according to the need of students.
 
 ### Part I: Data Science Best Practices
-1. Overview and Introduction
-1. R Coding Basics
-    1. [Data Structures](http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/)
-    1. [Exploring Data Frames](http://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2/)
-    1. [Subsetting Data](http://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/)
-    1. [Control Flow](http://swcarpentry.github.io/r-novice-gapminder/07-control-flow/)
-    1. [Vectorization](http://swcarpentry.github.io/r-novice-gapminder/09-vectorization/)
-    1. [Functions Explained](http://swcarpentry.github.io/r-novice-gapminder/10-functions/)
-    1. [Visualization with ggplot2](http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/)
-    1. [Debugging with RStudio](http://www.milanor.net/blog/visual-debugging-with-rstudio/)
-    1. [Writing Good Software](http://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/)
-1. Version Control with Git
-    1. [Happy Git with R](http://happygitwithr.com/)
-    1. [Software Carpentry Git lesson](http://swcarpentry.github.io/git-novice/)
-    1. [try Git](https://try.github.io)
-1. Creating R Package
-    1. [Making Your First R Package by Fong Chun Chan](http://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html)
-    1. [Developing Packages with RStudio](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
-    1. [R package checklist]
-    1. [R Package by Hadley Wickham](http://r-pkgs.had.co.nz/)
-1. Producing Reports With R Markdown
-    1. [R Markdown](http://r4ds.had.co.nz/r-markdown.html)
-    1. [Software Carpentry R Markdown lesson](http://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
+1. [Overview and Introduction](01-overview.html)
+1. [R Coding Basics](02-code.html)
+1. [Version Control with Git](03-git.html)
+1. [Creating R Package](04-package.html)
+1. [Producing Reports With R Markdown](05-rmarkdown.html)
 1. Part I Wrap up
 
 ### Part II: tidyverse workflow
