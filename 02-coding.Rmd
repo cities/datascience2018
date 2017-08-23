@@ -77,6 +77,12 @@ Rscript code/load_gapminder.R data/gapminder-FiveYearData.csv
 
 This section is adapted from [Visual Debugging with RStudio](http://www.milanor.net/blog/visual-debugging-with-rstudio/).
 
+1. Download `foo.R` from https://raw.githubusercontent.com/cities/datascience2017/master/code/foo.R and save it to the `code` (or `src`) subdirctory of your project folder;
+1. Open `foo.R` and `source` it;
+1. In the RStudio Console pane of type `foo("-1")` and then enter.
+
+Why does the `foo` function say "-1 is larger than 0"? Let's debug the `foo` function and find out.
+
 # Resources:
 - [Introduction to R on Data Camp](https://campus.datacamp.com/courses/free-introduction-to-r/chapter-1-intro-to-basics-1?ex=1): A self-instruction course covering R basics.
 - 
