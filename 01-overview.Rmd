@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 - Install RStudio Desktop free version from https://www.rstudio.com/products/rstudio/download/
 - Follow [these steps](03-git.html#install-git) to install Git for Windows. (Requires administrator privellege)
 
-## Installation Verification 
+## Installation Verification
 1. Launch RStudio and you should see a program window like this: <center><img src="http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png"></center>
 1. Click the **File** menu, select **New Project...**, then **Version Control** and **Git**;
 1. Copy & paste this URL: https://github.com/cities/datascience2017.git into the the Repository URL textbox; 
@@ -48,7 +48,8 @@ For the class project, you are expected to create a R package with the following
 
 You can use code from your current work or start from scratch. Take the feasibility of completing in a week into consideration when selecting ideas.
         
-If you don't have a feasible project idea at the moment, consider writing a R package that visualizes the bike counts on Hawthorne and Tilikum. Daily traffic counts data for these two bridges can be found [here](https://github.com/cities/datascience2017/data). At the minimum, your package should be able to:
+If you don't have a feasible project idea at the moment, consider writing a R package that visualizes the bike counts on Hawthorne and Tilikum. Daily traffic counts data for these two bridges can be found [here](https://github.com/cities/datascience2017/tree/master/data). At the minimum, your package should be able to:
+
 - Visualize bike counts on either or both bridges based on the data frame passed in;
 - Plot daily bike counts for any specified period;
 - [Advanced] Plot daily, weekly, or monthly bike counts based on an frequency argument.
