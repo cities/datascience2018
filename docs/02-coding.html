@@ -263,6 +263,22 @@ $(document).ready(function () {
 <li><a href="http://adv-r.had.co.nz/Style.html">Hadley Wickham’s code style guide</a></li>
 </ul>
 </div>
+<div id="r-command-line-program" class="section level1">
+<h1>R Command-Line Program</h1>
+<p>RStudio is good for writing and testing your R code, but for work that needs repetitions or takes a long time to finish, it may be easier to run your program/script in command line instead.</p>
+<p>For example, for the gapminder script we created on day 1, we can run it in a command line shell (you can open one in RStudio’s Tools/Shell… menu):</p>
+<pre class="r"><code>Rscript code/load_gapminder.R</code></pre>
+<p>Notice that your script may not print out outputs on the screen when called in the command line unless you explicitly call the <code>print</code> function.</p>
+<p>But what if we have many files for which we would like to repeatedly show the basic information (rows, data types etc)? We can refactor our script to accept the file name from command line arguments, so that the script can work with any acceptable files.</p>
+<p>In a R script, you can use <code>commandArgs</code> function to get the command line arguments:</p>
+<pre class="r"><code>args &lt;- commandArgs()
+print(args)</code></pre>
+<p>So if your script only takes 1 argument for the file name, you can get the value of the argument with:</p>
+<pre class="r"><code>args &lt;- commandArgs()
+file_name &lt;- args[1]</code></pre>
+<p>Now modify your code so that it can be invoked in the command line with:</p>
+<pre class="r"><code>Rscript code/load_gapminder.R data/gapminder-FiveYearData.csv </code></pre>
+</div>
 <div id="debugging-with-rstudio" class="section level1">
 <h1>Debugging with RStudio</h1>
 <p>This section is adapted from <a href="http://www.milanor.net/blog/visual-debugging-with-rstudio/">Visual Debugging with RStudio</a>.</p>

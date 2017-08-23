@@ -1,7 +1,7 @@
 foo <- function(x){ 
   if(x > 0) 
-    salutation = "Hello" 
+    claim <- paste(x, "is larger than 0") 
   else
-    salutation = "Goodbye"
-  salutation
+    claim <- paste(x, "is less than 0")
+  claim
 }

@@ -41,6 +41,38 @@ In programming as in writing, it is generally a good idea to stick to a consiten
 - [Google's R style guide](https://google.github.io/styleguide/Rguide.xml)
 - [Hadley Wickham's code style guide](http://adv-r.had.co.nz/Style.html)
 
+# R Command-Line Program
+
+RStudio is good for writing and testing your R code, but for work that needs repetitions or takes a long time to finish, it may be easier to run your program/script in command line instead. 
+
+For example, for the gapminder script we created on day 1, we can run it in a command line shell (you can open one in RStudio's Tools/Shell... menu):
+```{r, eval=FALSE}
+Rscript code/load_gapminder.R
+```
+
+Notice that your script may not print out outputs on the screen when called in the command line unless you explicitly call the `print` function.
+
+But what if we have many files for which we would like to repeatedly show the basic information (rows, data types etc)? We can refactor our script to accept the file name from command line arguments, so that the script can work with any acceptable files.
+
+In a R script, you can use `commandArgs` function to get the command line arguments:
+
+```{r, eval=FALSE}
+args <- commandArgs()
+print(args)
+```
+
+So if your script only takes 1 argument for the file name, you can get the value of the argument with:
+
+```{r, eval=FALSE}
+args <- commandArgs()
+file_name <- args[1]
+```
+
+Now modify your code so that it can be invoked in the command line with:
+```{r, eval=FALSE}
+Rscript code/load_gapminder.R data/gapminder-FiveYearData.csv 
+```
+
 # Debugging with RStudio
 
 This section is adapted from [Visual Debugging with RStudio](http://www.milanor.net/blog/visual-debugging-with-rstudio/).
