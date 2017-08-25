@@ -46,7 +46,7 @@ For the class project, you are expected to create a R package with the following
 1. Passes R package check and test(s);
 1. [Advanced] includes a vignette that demonstrates the usage of the package.
 
-You can use code from your current work or start from scratch. Take the feasibility of completing in a week into consideration when selecting ideas.
+You can take and/or re-organize code from your current work or start from scratch. Take the feasibility of completing in a week into consideration when selecting project ideas.
         
 If you don't have a feasible project idea at the moment, consider writing a R package that visualizes the bike counts on Hawthorne and Tilikum. Daily traffic counts data for these two bridges can be found [here](https://github.com/cities/datascience2017/tree/master/data). At the minimum, your package should be able to:
 
