@@ -215,17 +215,43 @@ $(document).ready(function () {
 </div>
 
 
+<div id="lesson" class="section level1">
+<h1>Lesson</h1>
 <ol style="list-style-type: decimal">
-<li><a href="http://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html">Making Your First R Package by Fong Chun Chan</a></li>
-<li><a href="https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio">Developing Packages with RStudio</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio">Developing R Packages with RStudio</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200486508-Building-Testing-and-Distributing-Packages">Building, Testing, and Distributing Packages</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200532317">Writing Package Documentation</a></li>
+<li><a href="http://r-pkgs.had.co.nz/man.html">Writing documents for R package</a></li>
 </ol>
+</div>
 <div id="r-package-checklist" class="section level1">
 <h1>R package checklist</h1>
+<ol start="0" style="list-style-type: decimal">
+<li>Check out (clone) the package repository as a RStudio project or create a R package project from RStudio menu <strong>File/New Project…</strong>;</li>
+<li>Test that the pakcage builds and loads without issue;</li>
+<li>Check the package with <code>devtools::check()</code>, which also runs tests inlcuded in the package; verify there are no errors or warnings;</li>
+<li>Does the package include tests? Do the tests run successfully?</li>
+<li>Verify that the package includes proper documents as roxygen comments in the R code files;</li>
+<li>(Does the package include vignettes?)</li>
+<li>Install the package and load it with <code>library</code>;</li>
+<li>See what functions are provided by the package with <code>ls(&quot;package:&lt;package name&gt;&quot;)</code> after loading it with <code>library</code>;</li>
+<li>Study the vignettes and help documents to learn how to use it.</li>
+</ol>
+</div>
+<div id="class-project-tips" class="section level1">
+<h1>Class project tips</h1>
+<ul>
+<li><code>readxl</code> package reads data in excel files</li>
+<li>Use <code>equal_*</code> functions in the testthat package for tests</li>
+<li>Use <code>ggplot2</code> for visualization</li>
+</ul>
 </div>
 <div id="resources" class="section level1">
 <h1>Resources:</h1>
 <ol style="list-style-type: decimal">
 <li><a href="http://r-pkgs.had.co.nz/">R Package by Hadley Wickham</a></li>
+<li><a href="http://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html">Making Your First R Package by Fong Chun Chan</a></li>
+<li><a href="https://methodsblog.wordpress.com/2015/11/30/building-your-first-r-package/">A Quickstart Guide for Building Your First R Package</a></li>
 </ol>
 </div>
 
