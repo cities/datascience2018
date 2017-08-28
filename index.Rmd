@@ -32,7 +32,7 @@ Did you ever feel you are “drinking from a hose” with the amount of data you
 The table below shows by date lecture topics, computer labs, and readings, and dates that assignments will be handed out and due. Supplement readings will be posted on course website. Topics are subject to adjustment according to the need of students.
 
 ### Part I: Data Science Best Practices
-1. [Overview and Introduction](01-overview.html)
+1. [Overview and Introduction](01-part1-overview.html)
 1. [R Coding Basics](02-coding.html)
 1. [Version Control with Git](03-git.html)
 1. [Creating R Package](04-package.html)
@@ -40,12 +40,10 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 1. Part I Wrap up
 
 ### Part II: tidyverse workflow
-1. [Overview of tidyverse and workflow](http://r4ds.had.co.nz/introduction.html)
-1. [Data importing](http://cities.github.io/datascience/import.html)
-1. Tidy data
-    1. [Tidy Data](http://cities.github.io/datascience/tidy.html)
-    1. [Dataframe Manipulation with tidyr](http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/)
-1. Data manipulation with dplyr and tidyr
+1. [Overview of tidyverse and workflow](06-part2-overview.html)
+1. [Data importing](07-import.html)
+1. [Tidy data](08-tidy.html)
+1. Data manipulation with dplyr
     1. [Data Transformation with dplyr](http://cities.github.io/datascience/transform-with-dplyr.html)
     1. [Dataframe Manipulation with dplyr](http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/)
 1. Data visulization with ggplot2
