@@ -24,7 +24,7 @@ That interrelationship leads to an even simpler set of practical instructions:
 - Put each variable in a column.
 
 # Lesson
-Download the script that generates sample data for lessons [here]()
+Download the script that generates the tables for the lesson [here](https://raw.githubusercontent.com/cities/datascience2017/master/code/tidy_data.R)
 1. [Tidy Data](http://cities.github.io/datascience/tidy.html)
 
 # Exercise
