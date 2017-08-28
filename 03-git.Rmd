@@ -44,15 +44,15 @@ Adapted from [Version Control with Git by Software Carpentry](http://swcarpentry
 
 
 - [A quick overview of Version Control](http://swcarpentry.github.io/git-novice/01-basics/)
-- We then start off by registering a github account at https://github.com
-- Use your github user name and email to config git. Open a Shell/Command line window from RStudio menu **Tools/Shell...**, and run the following commands:
+- Start off by registering a github account at https://github.com
+- Use your github user name and email to config git. Open a Shell/Command line window from RStudio menu **Tools/Shell...**, and modify and run the following commands:
 ```{r, eval=FALSE}
 git config --global user.name "Liming Wang"
 git config --global user.email "lmwang@gmail.com"
 git config --global color.ui "auto"
 ```
 
-- Let's turn the RStudio project you have been working on into a git repository and commit it to github http://happygitwithr.com/existing-github-last.html
+- Let's turn the RStudio project you have been working on into a git repository and commit it to github by following these steps: http://happygitwithr.com/existing-github-last.html
 - [Cache credentials](http://happygitwithr.com/credential-caching.html)
 - [Collaborating](http://swcarpentry.github.io/git-novice/08-collab/)
 - [Conflicts](http://swcarpentry.github.io/git-novice/09-conflict/)
@@ -61,4 +61,4 @@ git config --global color.ui "auto"
 # Resources:
 1. [Happy Git with R](http://happygitwithr.com/)
 1. [try Git](https://try.github.io)
-
+1. [Pro Git](https://git-scm.com/book/en/v2), a book by Scott Chacon and Ben Straub
