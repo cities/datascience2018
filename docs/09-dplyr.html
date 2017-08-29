@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Data manipulation with dplyr</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+
+<meta name="description" content="USP 634 Data Analysis I at Portland State Univeristy" />
+
+<script type="text/javascript" src="js/rmarkdown.js"></script>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-38176783-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs && document.readyState && document.readyState === "complete") {
+   window.setTimeout(function() {
+      hljs.initHighlighting();
+   }, 0);
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="css/rmarkdown.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2017</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Data manipulation with dplyr</h1>
+
+</div>
+
+
+<div id="overview" class="section level1">
+<h1>Overview</h1>
+<p>dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:</p>
+<ul>
+<li><code>mutate()</code> adds new variables that are functions of existing variables</li>
+<li><code>select()</code> picks variables based on their names.</li>
+<li><code>filter()</code> picks cases based on their values.</li>
+<li><code>summarise()</code> reduces multiple values down to a single summary.</li>
+<li><code>arrange()</code> changes the ordering of the rows.</li>
+</ul>
+<p>These all combine naturally with <code>group_by()</code> which allows you to perform any operation “by group”. You can learn more about them in <code>vignette(&quot;dplyr&quot;)</code>. As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in <code>vignette(&quot;two-table&quot;)</code>.</p>
+<p>dplyr is designed to abstract over how the data is stored. That means as well as working with local data frames, you can also work with remote database tables, using exactly the same R code. Install the dbplyr package then read <code>vignette(&quot;databases&quot;, package = &quot;dbplyr&quot;)</code>.</p>
+</div>
+<div id="lesson" class="section level1">
+<h1>Lesson</h1>
+<ol style="list-style-type: decimal">
+<li><a href="http://cities.github.io/datascience/transform-with-dplyr.html">Data Transformation with dplyr</a></li>
+</ol>
+<div id="variable-recoding-with-dplyr" class="section level2">
+<h2>Variable recoding with dplyr</h2>
+<ul>
+<li><code>recode</code> and <code>recode_factor</code>: Replace numeric values based on their position, and character values by their name;</li>
+<li><code>if_else</code>: Replace values based on a logical vector;</li>
+<li><code>case_when</code>: Vectorise multiple if and else if statements.</li>
+</ul>
+<p>Recoding, when to use which function: - one-to-one, many-to-one: <code>recode</code> and <code>recode_factor</code></p>
+<pre class="r"><code>library(tidyverse)
+
+# load NHTS2009 travel diaries subset
+dd &lt;- read_csv(&quot;data/NHTS2009_dd.csv&quot;)</code></pre>
+<pre><code>## Parsed with column specification:
+## cols(
+##   HOUSEID = col_integer(),
+##   PERSONID = col_character(),
+##   HHSIZE = col_integer(),
+##   HH_RACE = col_character(),
+##   HHFAMINC = col_character(),
+##   URBRUR = col_character(),
+##   TRIPPURP = col_character(),
+##   TRPTRANS = col_character(),
+##   TRVLMIN = col_integer(),
+##   TRPMILES = col_double()
+## )</code></pre>
+<pre class="r"><code># recode race (HH_RACE column) according to data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=951
+dd %&gt;% mutate(hh_race_str=recode(HH_RACE, 
+                                 &quot;01&quot;=&quot;White&quot;,
+                                 &quot;02&quot;=&quot;African American, Black&quot;,
+                                 &quot;03&quot;=&quot;Asian Only&quot;,
+                                 &quot;04&quot;=&quot;American Indian, Alaskan Native&quot;,
+                                 &quot;05&quot;=&quot;Native Hawaiian, other Pacific&quot;,
+                                 &quot;06&quot;=&quot;Multiracial&quot;,
+                                 &quot;07&quot;=&quot;Hispanic/Mexican&quot;,
+                                 &quot;97&quot;=&quot;Other specify&quot;,
+                                 .default = as.character(NA) # any unspecified values would be assgined NA
+                                 )) %&gt;% 
+  select(HH_RACE, hh_race_str)</code></pre>
+<pre><code>## # A tibble: 304 x 2
+##    HH_RACE hh_race_str
+##      &lt;chr&gt;       &lt;chr&gt;
+##  1      01       White
+##  2      01       White
+##  3      01       White
+##  4      01       White
+##  5      01       White
+##  6      01       White
+##  7      01       White
+##  8      01       White
+##  9      01       White
+## 10      01       White
+## # ... with 294 more rows</code></pre>
+<ul>
+<li>a logical condition: <code>if_else</code></li>
+</ul>
+<pre class="r"><code># code driving &amp; non-driving based on travel modes (TRPTRANS column) data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=1084
+dd %&gt;% mutate(driving=ifelse(TRPTRANS %in% c(&quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;), 1, 0),
+              driving=ifelse(TRPTRANS %in% c(&quot;-1&quot;, &quot;-7&quot;, &quot;-8&quot;, &quot;-9&quot;), NA, driving) # retain missing values as NA
+             ) %&gt;% 
+  select(TRPTRANS, driving)</code></pre>
+<pre><code>## # A tibble: 304 x 2
+##    TRPTRANS driving
+##       &lt;chr&gt;   &lt;dbl&gt;
+##  1       03       1
+##  2       03       1
+##  3       03       1
+##  4       03       1
+##  5       03       1
+##  6       03       1
+##  7       03       1
+##  8       03       1
+##  9       03       1
+## 10       03       1
+## # ... with 294 more rows</code></pre>
+<ul>
+<li>multiple logical conditions: <code>case_when</code></li>
+</ul>
+<pre class="r"><code># code driving &amp; non-driving based on travel modes (TRPTRANS column) data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=1084 use case_when
+dd %&gt;% mutate(driving=case_when(
+  TRPTRANS %in% c(&quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;, &quot;07&quot;) ~ 1, 
+  TRPTRANS %in% c(&quot;-1&quot;, &quot;-7&quot;, &quot;-8&quot;, &quot;-9&quot;) ~ as.double(NA), # retain missing values as NA
+  TRUE ~ 0)) %&gt;% 
+  select(TRPTRANS, driving)</code></pre>
+<pre><code>## # A tibble: 304 x 2
+##    TRPTRANS driving
+##       &lt;chr&gt;   &lt;dbl&gt;
+##  1       03       1
+##  2       03       1
+##  3       03       1
+##  4       03       1
+##  5       03       1
+##  6       03       1
+##  7       03       1
+##  8       03       1
+##  9       03       1
+## 10       03       1
+## # ... with 294 more rows</code></pre>
+<pre class="r"><code># reclassify households into low, med, high income based on HHFAMINC column data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=949 with brackets [0, 30000, 6000]
+dd &lt;- dd %&gt;% mutate(income_cat=case_when(
+  HHFAMINC %in% c(&quot;01&quot;, &quot;02&quot;, &quot;03&quot;, &quot;04&quot;, &quot;05&quot;, &quot;06&quot;) ~ &quot;low income&quot;,
+  HHFAMINC %in% c(&quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;, &quot;12&quot;) ~ &quot;med income&quot;,
+  HHFAMINC %in% c(&quot;13&quot;, &quot;14&quot;, &quot;15&quot;, &quot;16&quot;, &quot;17&quot;, &quot;18&quot;) ~ &quot;high income&quot;,
+  TRUE ~ as.character(NA) # retain missing values as NA
+  ))
+
+# verify recodeing results with group_by &amp; tally
+dd %&gt;% group_by(HHFAMINC, income_cat) %&gt;% 
+  tally()</code></pre>
+<pre><code>## # A tibble: 13 x 3
+## # Groups:   HHFAMINC [?]
+##    HHFAMINC  income_cat     n
+##       &lt;chr&gt;       &lt;chr&gt; &lt;int&gt;
+##  1       01  low income     4
+##  2       02  low income     2
+##  3       03  low income    12
+##  4       04  low income     2
+##  5       06  low income    18
+##  6       07  med income     6
+##  7       08  med income    10
+##  8       12  med income     7
+##  9       14 high income    20
+## 10       16 high income    38
+## 11       17 high income    64
+## 12       18 high income   115
+## 13       -7        &lt;NA&gt;     6</code></pre>
+</div>
+</div>
+<div id="exercise" class="section level1">
+<h1>Exercise</h1>
+<ol style="list-style-type: decimal">
+<li>Filter days where there are missing values in bike counts and weather information. Count number of days with missing values on either bike counts or weather information.</li>
+<li>Calculate weekly, monthly, and annual bike counts from the daily bike counts data.</li>
+<li>Join the bike counts data with the weather data. Which type of joins works best here?</li>
+<li>With the NHTS2009 travel diaries data, how do you cacluate total miles traveled and miles traveled by driving for each household (hint: the TRPMILES column contains information of trip distance for each member of a household).</li>
+<li>[Challenge] How do you compute the average household-level miles driving per capita by income categories (low, med, high)?</li>
+</ol>
+</div>
+<div id="resources" class="section level1">
+<h1>Resources:</h1>
+<ol style="list-style-type: decimal">
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/">Dataframe Manipulation with dplyr</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Data Wrangling Cheat sheet</a></li>
+</ol>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>

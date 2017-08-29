@@ -27,3 +27,11 @@ Tilikum Crossing Daily bike counts 09/11/2015-12/31/2016
 - Source: Portland Beauru of Transportation
 - URL: https://www.portlandoregon.gov/transportation/44671
 - Access Date: 08/21/2017
+
+# NHTS2009_dd.csv
+NHTS 2009 travel diaries subset (the first 100 observations)
+- Source: ORNL
+- URL: http://nhts.ornl.gov/download.shtml#2009
+- Data Dictionary: http://nhts.ornl.gov/tables09/CodebookBrowser.aspx
+- Format: CSV
+- Access Date: 08/29/2017

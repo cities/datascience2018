@@ -43,9 +43,7 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 1. [Overview of tidyverse and workflow](06-part2-overview.html)
 1. [Data importing](07-import.html)
 1. [Tidy data](08-tidy.html)
-1. Data manipulation with dplyr
-    1. [Data Transformation with dplyr](http://cities.github.io/datascience/transform-with-dplyr.html)
-    1. [Dataframe Manipulation with dplyr](http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/)
+1. [Data manipulation with dplyr](09-dplyr.html)
 1. Data visulization with ggplot2
     1. [Data visulization with ggplot2](http://cities.github.io/datascience/visualize.html)
     1. [ggplot2 tutorial by Dr. Jenny Bryan](https://github.com/jennybc/ggplot2-tutorial/blob/master/ggplot2-tutorial-slides/ggplot2-tutorial-slides.pdf)

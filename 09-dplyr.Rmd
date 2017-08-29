@@ -1,0 +1,99 @@
+---
+title: "Data manipulation with dplyr"
+output: 
+  html_document:
+    toc: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Overview
+
+dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:
+
+- `mutate()` adds new variables that are functions of existing variables
+- `select()` picks variables based on their names.
+- `filter()` picks cases based on their values.
+- `summarise()` reduces multiple values down to a single summary.
+- `arrange()` changes the ordering of the rows.
+
+These all combine naturally with `group_by()` which allows you to perform any operation "by group". You can learn more about them in `vignette("dplyr")`. As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in `vignette("two-table")`.
+
+dplyr is designed to abstract over how the data is stored. That means as well as working with local data frames, you can also work with remote database tables, using exactly the same R code. Install the dbplyr package then read `vignette("databases", package = "dbplyr")`.
+
+# Lesson
+1. [Data Transformation with dplyr](http://cities.github.io/datascience/transform-with-dplyr.html)
+
+## Variable recoding with dplyr
+- `recode` and `recode_factor`: Replace numeric values based on their position, and character values by their name;
+- `if_else`: Replace values based on a logical vector;
+- `case_when`: Vectorise multiple if and else if statements.
+
+Recoding, when to use which function:
+- one-to-one, many-to-one: `recode` and `recode_factor`
+
+
+```{r, echo=TRUE}
+library(tidyverse)
+
+# load NHTS2009 travel diaries subset
+dd <- read_csv("data/NHTS2009_dd.csv")
+
+# recode race (HH_RACE column) according to data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=951
+dd %>% mutate(hh_race_str=recode(HH_RACE, 
+                                 "01"="White",
+                                 "02"="African American, Black",
+                                 "03"="Asian Only",
+                                 "04"="American Indian, Alaskan Native",
+                                 "05"="Native Hawaiian, other Pacific",
+                                 "06"="Multiracial",
+                                 "07"="Hispanic/Mexican",
+                                 "97"="Other specify",
+                                 .default = as.character(NA) # any unspecified values would be assgined NA
+                                 )) %>% 
+  select(HH_RACE, hh_race_str)
+```
+
+- a logical condition: `if_else`
+```{r, echo=TRUE}
+# code driving & non-driving based on travel modes (TRPTRANS column) data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=1084
+dd %>% mutate(driving=ifelse(TRPTRANS %in% c("01", "02", "03", "04", "05", "06", "07"), 1, 0),
+              driving=ifelse(TRPTRANS %in% c("-1", "-7", "-8", "-9"), NA, driving) # retain missing values as NA
+             ) %>% 
+  select(TRPTRANS, driving)
+```
+
+- multiple logical conditions: `case_when`
+```{r, echo=TRUE}
+# code driving & non-driving based on travel modes (TRPTRANS column) data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=1084 use case_when
+dd %>% mutate(driving=case_when(
+  TRPTRANS %in% c("01", "02", "03", "04", "05", "06", "07") ~ 1, 
+  TRPTRANS %in% c("-1", "-7", "-8", "-9") ~ as.double(NA), # retain missing values as NA
+  TRUE ~ 0)) %>% 
+  select(TRPTRANS, driving)
+
+# reclassify households into low, med, high income based on HHFAMINC column data dictionary: http://nhts.ornl.gov/tables09/CodebookPage.aspx?id=949 with brackets [0, 30000, 6000]
+dd <- dd %>% mutate(income_cat=case_when(
+  HHFAMINC %in% c("01", "02", "03", "04", "05", "06") ~ "low income",
+  HHFAMINC %in% c("07", "08", "09", "10", "11", "12") ~ "med income",
+  HHFAMINC %in% c("13", "14", "15", "16", "17", "18") ~ "high income",
+  TRUE ~ as.character(NA) # retain missing values as NA
+  ))
+
+# verify recodeing results with group_by & tally
+dd %>% group_by(HHFAMINC, income_cat) %>% 
+  tally()
+```
+
+# Exercise
+1. Filter days where there are missing values in bike counts and weather information. Count number of days with missing values on either bike counts or weather information.
+1. Calculate weekly, monthly, and annual bike counts from the daily bike counts data.
+1. Join the bike counts data with the weather data. Which type of joins works best here?
+1. With the NHTS2009 travel diaries data, how do you cacluate total miles traveled and miles traveled by driving for each household (hint: the TRPMILES column contains information of trip distance for each member of a household).
+1. [Challenge] How do you compute the average household-level miles driving per capita by income categories (low, med, high)?
+
+# Resources:
+1. [Dataframe Manipulation with dplyr](http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/)
+1. [Data Wrangling Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
