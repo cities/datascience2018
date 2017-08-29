@@ -54,12 +54,14 @@ iris %>% tail(5)
 More information available at: http://magrittr.tidyverse.org/
 
 RStudio keyboard shortcut for `%>%`:
-- Alt-Shift-M (Windows)
+
+- ctrl-Shift-M (Windows)
 - Command-Shift-M (Mac)
 
 # Class project
 
 For the class project for Part II, you are expected to follow the tidyverse work flow and use the tidyverse suite of packages to conduct an analytic project using data of your choice. Your project should involve these steps:
+
 1. Data importing and tidying;
 1. Data transformation;
 1. Data Visualization;

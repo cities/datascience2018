@@ -32,7 +32,7 @@ Download the script that generates the tables for the lesson [here](https://raw.
 1. Are the bike counts data tidy data?
 1. If not, why not? And how can we tidy it?
 
-# Resources:
+# Resources
 1. [Dataframe Manipulation with tidyr](http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/)
 1. [Data Wrangling Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)
 1. [Introduction to tidyr](https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html)
