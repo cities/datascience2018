@@ -11,7 +11,7 @@
 
 
 
-<title>Tidy Data</title>
+<title>Data visulization with ggplot2</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -210,48 +210,49 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Tidy Data</h1>
+<h1 class="title toc-ignore">Data visulization with ggplot2</h1>
 
 </div>
 
 
-<div id="tidy-data" class="section level1">
-<h1>Tidy Data</h1>
-<p>There are three interrelated rules which make a dataset tidy:</p>
+<div id="overview" class="section level1">
+<h1>Overview</h1>
+<p>ggplot2 is a grammar of graphics, a coherent system for describing and building graphs.</p>
 <ul>
-<li>Each variable must have its own column.</li>
-<li>Each observation must have its own row.</li>
-<li>Each value must have its own cell.</li>
-</ul>
-<center>
-<img src="http://r4ds.had.co.nz/images/tidy-1.png">
-</center>
-<p>That interrelationship leads to an even simpler set of practical instructions:</p>
-<ul>
-<li>Put each dataset in a tibble.</li>
-<li>Put each variable in a column.</li>
+<li>data (data frame): <code>ggplot(dataset)</code></li>
+<li>a coordinate system (aesthetic mapping): <code>aes()</code></li>
+<li>geometries: <code>geom_point</code>, <code>geom_line</code>, <code>geom_bar</code>, …</li>
+<li>facet: <code>facet_wrap</code>, <code>facet_grid</code></li>
+<li>fine tuning coordinate, theme, scale and labels: <code>coordinate_*</code>, <code>theme_bw</code>, <code>scale_x_log10</code>, <code>labs(x=..., y=...)</code></li>
 </ul>
 </div>
 <div id="lesson" class="section level1">
 <h1>Lesson</h1>
-<p>Download the script that generates the tables for the lesson <a href="https://raw.githubusercontent.com/cities/datascience2017/master/code/tidy_data.R">here</a></p>
 <ol style="list-style-type: decimal">
-<li><a href="http://cities.github.io/datascience/tidy.html">Tidy Data</a></li>
+<li><a href="http://cities.github.io/datascience/visualize.html">Data visulization with ggplot2</a></li>
+<li><a href="https://github.com/sinhrks/ggfortify">ggfortify - plot some popular R packages with ggplot2</a></li>
+<li><a href="http://ggplot2.tidyverse.org/reference/geom_map.html">geom_map</a></li>
+<li><a href="http://ggplot2.tidyverse.org/reference/geom_map.html">geom_sf - ggplot2 working with simple feature</a></li>
+<li><a href="https://github.com/dkahle/ggmap">ggmap - raster map tiles from popular online mapping services</a></li>
+<li><a href="http://www.htmlwidgets.org/showcase_leaflet.html">interactive maps and charts with R</a></li>
 </ol>
 </div>
 <div id="exercise" class="section level1">
 <h1>Exercise</h1>
 <ol style="list-style-type: decimal">
-<li>Are the bike counts data tidy data?</li>
-<li>If not, why not? And how can we tidy it?</li>
+<li>Plot the daily bike counts for Hawthorne and Tilikum with ggplot2; can you plot them in one chart?</li>
+<li>Plot weekly, monthly, and annual bike counts for Hawthorne and Tilikum;</li>
+<li>Now think about and try out different ways to plot weather information along with your daily bike counts (separately or together);</li>
+<li>You can combine time series stats and ggplot2/ggfortify to plot seasonal variation, trend and noise separately. See <a href="http://rpubs.com/sinhrks/plot_tsstats">here</a> for an example of how to do this.</li>
 </ol>
 </div>
 <div id="resources" class="section level1">
-<h1>Resources</h1>
+<h1>Resources:</h1>
 <ol style="list-style-type: decimal">
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/">Dataframe Manipulation with tidyr</a></li>
-<li><a href="https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf">Data Wrangling Cheat sheet</a></li>
-<li><a href="https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html">Introduction to tidyr</a></li>
+<li><a href="https://github.com/jennybc/ggplot2-tutorial/blob/master/ggplot2-tutorial-slides/ggplot2-tutorial-slides.pdf">ggplot2 tutorial by Dr. Jenny Bryan</a></li>
+<li><a href="http://r4ds.had.co.nz/graphics-for-communication.html">R4DS Graphics for communication</a></li>
+<li><a href="https://www.rstudio.com/wp-content/uploads/2016/11/ggplot2-cheatsheet-2.1.pdf">The ggplot2 Cheat Sheet - RStudio</a></li>
+<li><a href="http://www.cookbook-r.com/Graphs/">R Graphics Cookbook</a></li>
 </ol>
 </div>
 
