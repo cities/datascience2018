@@ -1,4 +1,6 @@
 
+
+
 fwf_pos <- fwf_empty("data/NCDC-CDO-USC00356750.txt")
 test_df <- read_fwf("data/NCDC-CDO-USC00356750.txt", col_positions = fwf_pos)
 

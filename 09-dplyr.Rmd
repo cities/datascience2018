@@ -88,6 +88,10 @@ dd %>% group_by(HHFAMINC, income_cat) %>%
   tally()
 ```
 
+## Programming with dplyr
+
+[Programming with dplyr](http://dplyr.tidyverse.org/articles/programming.html)
+
 # Exercise
 1. Filter days where there are missing values in bike counts and weather information. Count number of days with missing values on either bike counts or weather information.
 1. Calculate weekly, monthly, and annual bike counts from the daily bike counts data.
