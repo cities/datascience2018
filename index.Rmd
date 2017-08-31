@@ -44,9 +44,7 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 1. [Data importing](07-import.html)
 1. [Tidy data](08-tidy.html)
 1. [Data manipulation with dplyr](09-dplyr.html)
-1. Data visulization with ggplot2
-    1. [Data visulization with ggplot2](http://cities.github.io/datascience/visualize.html)
-    1. [ggplot2 tutorial by Dr. Jenny Bryan](https://github.com/jennybc/ggplot2-tutorial/blob/master/ggplot2-tutorial-slides/ggplot2-tutorial-slides.pdf)
+1. [Data visulization with ggplot2](10-visualize.html)
 1. Data modeling with Split-Apply-Combine
     1. [Data modeling with Split-Apply-Combine](http://cities.github.io/datascience/model-with-split-apply-combine-strategy.html)
     1. [Software Carpentry lesson on Split-Apply-Combine](http://swcarpentry.github.io/r-novice-gapminder/12-plyr/)

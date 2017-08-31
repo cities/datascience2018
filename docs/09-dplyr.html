@@ -241,6 +241,7 @@ $(document).ready(function () {
 <li><code>case_when</code>: Vectorise multiple if and else if statements.</li>
 </ul>
 <p>Recoding, when to use which function: - one-to-one, many-to-one: <code>recode</code> and <code>recode_factor</code></p>
+<p>Download the NHTS 2009 data file for the demos <a href="https://raw.githubusercontent.com/cities/datascience2017/master/data/NHTS2009_dd.csv">here</a> (Right click &amp; select Save As…)</p>
 <pre class="r"><code>library(tidyverse)
 
 # load NHTS2009 travel diaries subset
@@ -359,6 +360,10 @@ dd %&gt;% group_by(HHFAMINC, income_cat) %&gt;%
 ## 12       18 high income   115
 ## 13       -7        &lt;NA&gt;     6</code></pre>
 </div>
+<div id="programming-with-dplyr" class="section level2">
+<h2>Programming with dplyr</h2>
+<p><a href="http://dplyr.tidyverse.org/articles/programming.html">Programming with dplyr</a></p>
+</div>
 </div>
 <div id="exercise" class="section level1">
 <h1>Exercise</h1>
@@ -366,7 +371,7 @@ dd %&gt;% group_by(HHFAMINC, income_cat) %&gt;%
 <li>Filter days where there are missing values in bike counts and weather information. Count number of days with missing values on either bike counts or weather information.</li>
 <li>Calculate weekly, monthly, and annual bike counts from the daily bike counts data.</li>
 <li>Join the bike counts data with the weather data. Which type of joins works best here?</li>
-<li>With the NHTS2009 travel diaries data, how do you cacluate total miles traveled and miles traveled by driving for each household (hint: the TRPMILES column contains information of trip distance for each member of a household).</li>
+<li>With the <a href="https://raw.githubusercontent.com/cities/datascience2017/master/data/NHTS2009_dd.csv">NHTS2009 travel diaries data</a>, how do you cacluate total miles traveled (using any modes) and miles traveled by driving for each household (hint: the TRPMILES column contains information of trip distance for each member of a household).</li>
 <li>[Challenge] How do you compute the average household-level miles driving per capita by income categories (low, med, high)?</li>
 </ol>
 </div>
