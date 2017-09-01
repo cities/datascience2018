@@ -9,3 +9,5 @@ test_df <- read_fwf("data/NCDC-CDO-USC00356750.txt",
                                                   end=c(19, 69, 120),
                                                   col_names = c("STATION", "NAME", "PRCP")),
                     skip=2)
+
+
