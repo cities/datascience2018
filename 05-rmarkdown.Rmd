@@ -1,5 +1,5 @@
 ---
-title: "Creating R Package"
+title: "R Markdown"
 #author: "Liming Wang"
 #date: "8/21/2017"
 output: 
@@ -11,9 +11,10 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+1. [Introduce RMarkdown](http://cities.github.io/datascience/rmarkdown.html)
 1. [Software Carpentry R Markdown lesson](http://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
+1. [More R Markdown](http://r4ds.had.co.nz/r-markdown.html)
 
 # Resources
-1. [R Markdown](http://r4ds.had.co.nz/r-markdown.html)
 1. [R Markdown from RStudio](http://rmarkdown.rstudio.com/lesson-1.html)
 1. [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
