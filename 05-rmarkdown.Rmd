@@ -11,9 +11,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+1. [R Markdown gallery](http://rmarkdown.rstudio.com/gallery.html)
 1. [Introduce RMarkdown](http://cities.github.io/datascience/rmarkdown.html)
 1. [Software Carpentry R Markdown lesson](http://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
 1. [More R Markdown](http://r4ds.had.co.nz/r-markdown.html)
+1. [Writing Vignettes with R Markdown](http://r-pkgs.had.co.nz/vignettes.html)
 
 # Resources
 1. [R Markdown from RStudio](http://rmarkdown.rstudio.com/lesson-1.html)
