@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Installation
 - Download and install R 3.5.1 from https://ftp.osuosl.org/pub/cran/ . (Requires administrator/root privellege)
 - Install the latest RStudio Desktop free version from https://www.rstudio.com/products/rstudio/download/
-- Follow [these steps](03-git.html#install-git) to install Git. (Requires administrator privellege)
+- Follow [these steps](03-git.html#install-git) to install Git. (Requires administrator/root privellege)
 
 If you already have R and RStudio installed on your laptop, it'd be a good idea to check their version and upgrade them to the latest (if they are not).
 
@@ -31,10 +31,12 @@ If you see a popup box that says "Clone Repsitory" with a progress bar and then 
 According to Wikipedia:
 
 > Data science is an interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from data in various forms, both structured and unstructured, similar to data mining.
-
+>
 > Data science is a "concept to unify statistics, data analysis, machine learning and their related methods" in order to "understand and analyze actual phenomena" with data. It employs techniques and theories drawn from many fields within the context of mathematics, statistics, information science, and computer science.
 
-[![Data Science Venn Diagram](https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=750w)](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram) by Drew Conway
+[![Data Science Venn Diagram](https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=750w)](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram) 
+
+Data Science Venn Diagram by Drew Conway
 
 ## Resources
 - [What is Data Science?](https://datascience.berkeley.edu/about/what-is-data-science/) by datascience@Berkeley
