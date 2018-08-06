@@ -58,11 +58,13 @@ Data Science Venn Diagram by Drew Conway
 For the class project, you are expected to create a re-usable R script with the following requirements and commit it to GitHub:
 
 1. Part I
+
     1. Contains at least one self-contained function;
     1. Follows a consistent style guide;
     1. Completed with necessary documentation;
     1. Has at least one test that passes;
     1. [Advanced] Organizes the function(s) into a package that passes the checks
+
 2. Part II
     1. Utilzes tidyverse functions as much as possible
     1. [Advanced] Includes a vignette that demonstrates the usage of the package
