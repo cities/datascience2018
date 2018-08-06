@@ -28,11 +28,12 @@ Hadley recommends the following for RStudio projects workflow:
 Everything you need is in one place, and cleanly separated from all the other projects that you are working on.
 
 I recommend organizing files in subdirectories by types, typically with at least these items:
-  - project_name.Rproj, RStudio project file
-  - README.md, a description file of the project
-  - code, for R scripts
-  - data, for data files
-  - docs, for document/report files, such as R Markdown files
+
+- project_name.Rproj, RStudio project file
+- README.md, a description file of the project
+- code, for R scripts
+- data, for data files
+- docs, for document/report files, such as R Markdown files
 
 ## Exercise 
 
