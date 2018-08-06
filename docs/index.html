@@ -20,24 +20,12 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<meta name="description" content="USP 634 Data Analysis I at Portland State Univeristy" />
+<meta name="description" content="Introduction to Data Science at Portland State Univeristy" />
 
 <script type="text/javascript" src="js/rmarkdown.js"></script>
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-38176783-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -46,10 +34,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -104,6 +94,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -188,7 +181,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2017</a>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2018</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -216,8 +209,8 @@ $(document).ready(function () {
 
 
 <ul>
-<li>Course Website: <a href="https://cities.github.io/datascience2017" class="uri">https://cities.github.io/datascience2017</a></li>
-<li>GitHub repository: <a href="https://github.com/cities/datascience2017" class="uri">https://github.com/cities/datascience2017</a></li>
+<li>Course Website: <a href="https://cities.github.io/datascience2018" class="uri">https://cities.github.io/datascience2018</a></li>
+<li>GitHub repository: <a href="https://github.com/cities/datascience2018" class="uri">https://github.com/cities/datascience2018</a></li>
 </ul>
 <div id="syllabus" class="section level1">
 <h1>Syllabus</h1>
@@ -229,22 +222,23 @@ $(document).ready(function () {
 <h3>Part I: Data Science Best Practices</h3>
 <ol style="list-style-type: decimal">
 <li><a href="01-part1-overview.html">Overview and Introduction</a></li>
-<li><a href="02-coding.html">R Coding Basics</a></li>
-<li><a href="03-git.html">Version Control with Git</a></li>
-<li><a href="04-package.html">Creating R Package</a></li>
-<li><a href="05-rmarkdown.html">Producing Reports With R Markdown</a></li>
-<li><a href="http://cities.github.io/datascience/resources.html">Part I Wrap up</a></li>
+<li><a href="01-rstudio.html">Workflow and RStudio</a></li>
+<li><a href="02-coding.html">R Coding and Scripting Basics</a></li>
+<li><a href="03-git.html">Version control using Git</a></li>
+<li><a href="02-ds-best-practices.html">Data Science Best Practices</a></li>
+<li>Part I Wrap Up</li>
 </ol>
 </div>
 <div id="part-ii-tidyverse-workflow" class="section level3">
 <h3>Part II: tidyverse workflow</h3>
 <ol style="list-style-type: decimal">
-<li><a href="06-part2-overview.html">Overview of tidyverse and workflow</a></li>
+<li><a href="06-part2-overview.html">Overview of the tidyverse workflow</a></li>
 <li><a href="07-import.html">Data importing</a></li>
 <li><a href="08-tidy.html">Tidy data</a></li>
 <li><a href="09-dplyr.html">Data manipulation with dplyr</a></li>
 <li><a href="10-visualize.html">Data visulization with ggplot2</a></li>
 <li><a href="11-split-apply-combine.html">Data modeling with Split-Apply-Combine</a></li>
+<li><a href="05-rmarkdown.html">Producing Reports With R Markdown</a></li>
 <li>Part II Wrap Up</li>
 </ol>
 </div>
@@ -252,11 +246,11 @@ $(document).ready(function () {
 <div id="location-and-time" class="section level2">
 <h2>Location and Time</h2>
 <ul>
-<li>Room: URBN 303</li>
+<li>Room: Portland State University Engineering Building 315</li>
 <li>Time:
 <ul>
-<li>Part I 8/22 - 25, 2017 1 - 5pm</li>
-<li>Part II 8/28 - 9/1, 2017 1 - 5pm</li>
+<li>Part I 8/6 - 7, 2018 9am - 5pm</li>
+<li>Part II 8/8 - 8/10, 2018 9am - 5pm</li>
 </ul></li>
 </ul>
 </div>
@@ -270,7 +264,7 @@ $(document).ready(function () {
 </div>
 <div id="software-and-hardware" class="section level2">
 <h2>Software and Hardware</h2>
-<p>This course will use R, the free statistical software, and RStudio (<a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>) as our main interface to R. The lecture and lab instructions will be provided using R. It is possible (and encouraged) for existing Python users (and potentially other software, such as SPSS, Stata, Matlab, SAS, etc) to keep using the software they already know well. Student must bring their own laptop. The instructor and TA will help the students set up their laptop to run all examples/exercises. They can review/re-run the examples in lectures and labs by themselves.</p>
+<p>This course will use R, the free statistical software, and RStudio (<a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a>) as our main interface to R. The lecture and lab instructions will be provided using R. Student must bring their own laptop. The instructor and TA will help the students set up their laptop to run all examples/exercises. They can review/re-run the examples in lectures and labs by themselves.</p>
 </div>
 <div id="textbook-and-readings" class="section level2">
 <h2>Textbook and Readings</h2>
@@ -279,10 +273,6 @@ $(document).ready(function () {
 <li><a href="https://www.amazon.com/Data-Science-Transform-Visualize-Model/dp/1491910399">Wickham, H., Grolemund, G., 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 1 edition. ed. O’Reilly Media</a>.</li>
 </ul>
 <p>An electronic version is available on <a href="http://r4ds.had.co.nz/">Hadley Wickham’s website</a>.</p>
-<p>For Python users, Wes McKinney’s book is recommended:</p>
-<ul>
-<li><a href="https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793">McKinney, W., 2012. Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython, 1 edition. ed. O’Reilly Media</a>.</li>
-</ul>
 <p>Journal articles and online resources are used as supplements to the textbook.</p>
 </div>
 </div>
@@ -299,7 +289,8 @@ $(document).ready(function () {
 <li><a href="http://stat545.com">UBC Stat 545</a> by Professor Jenny Bryan at UBC</li>
 <li><a href="http://janvitek.org/events/NEU/5110/">NEU 5110 Introduction to Data Science</a> by Professor Jan Vitek</li>
 </ul>
-<p>The writing-up and website is powered by the <a href="https://bookdown.org">bookdown</a> package and <a href="https://www.github.com">github</a>.</p>
+<p>I would also acknowledge the <a href="https://www.oregonmodels.org/">Oregon Modeling User Group</a> in providing feedback to the course development and in helping promoting it. I am grateful to Taylor Sutton (PBOT) for kindly sharing the bike counts data used in the course demostration and project.</p>
+<p>The writing-up and website is powered by the <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> package and <a href="https://www.github.com">github</a>.</p>
 </div>
 <div id="license" class="section level1">
 <h1>License</h1>

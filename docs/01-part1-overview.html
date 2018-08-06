@@ -20,24 +20,12 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<meta name="description" content="USP 634 Data Analysis I at Portland State Univeristy" />
+<meta name="description" content="Introduction to Data Science at Portland State Univeristy" />
 
 <script type="text/javascript" src="js/rmarkdown.js"></script>
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-38176783-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -46,10 +34,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -104,6 +94,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -188,7 +181,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2017</a>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2018</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -220,10 +213,11 @@ $(document).ready(function () {
 <div id="installation" class="section level2">
 <h2>Installation</h2>
 <ul>
-<li>Install R 3.4.1 from <a href="https://ftp.osuosl.org/pub/cran/" class="uri">https://ftp.osuosl.org/pub/cran/</a> . (Requires administrator privellege)</li>
-<li>Install RStudio Desktop free version from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
-<li>Follow <a href="03-git.html#install-git">these steps</a> to install Git for Windows. (Requires administrator privellege)</li>
+<li>Download and install R 3.5.1 from <a href="https://ftp.osuosl.org/pub/cran/" class="uri">https://ftp.osuosl.org/pub/cran/</a> . (Requires administrator/root privellege)</li>
+<li>Install the latest RStudio Desktop free version from <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a></li>
+<li>Follow <a href="03-git.html#install-git">these steps</a> to install Git. (Requires administrator privellege)</li>
 </ul>
+<p>If you already have R and RStudio installed on your laptop, it’d be a good idea to check their version and upgrade them to the latest (if they are not).</p>
 </div>
 <div id="installation-verification" class="section level2">
 <h2>Installation Verification</h2>
@@ -233,41 +227,56 @@ $(document).ready(function () {
 <img src="http://swcarpentry.github.io/r-novice-gapminder/fig/01-rstudio.png">
 </center></li>
 <li>Click the <strong>File</strong> menu, select <strong>New Project…</strong>, then <strong>Version Control</strong> and <strong>Git</strong>;</li>
-<li>Copy &amp; paste this URL: <a href="https://github.com/cities/datascience2017.git" class="uri">https://github.com/cities/datascience2017.git</a> into the the Repository URL textbox;</li>
+<li>Copy &amp; paste this URL: <a href="https://github.com/cities/datascience2018.git" class="uri">https://github.com/cities/datascience2018.git</a> into the the Repository URL textbox;</li>
 <li>Click <strong>Create Project</strong>.</li>
 </ol>
 <p>If you see a popup box that says “Clone Repsitory” with a progress bar and then RStudio refreshes, then your installation is working.</p>
+</div>
+</div>
+<div id="what-is-data-science" class="section level1">
+<h1>What is Data Science?</h1>
+<p>According to Wikipedia:</p>
+<blockquote>
+<p>Data science is an interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from data in various forms, both structured and unstructured, similar to data mining.</p>
+</blockquote>
+<blockquote>
+<p>Data science is a “concept to unify statistics, data analysis, machine learning and their related methods” in order to “understand and analyze actual phenomena” with data. It employs techniques and theories drawn from many fields within the context of mathematics, statistics, information science, and computer science.</p>
+</blockquote>
+<p><a href="http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram"><img src="https://static1.squarespace.com/static/5150aec6e4b0e340ec52710a/t/51525c33e4b0b3e0d10f77ab/1364352052403/Data_Science_VD.png?format=750w" alt="Data Science Venn Diagram" /></a> by Drew Conway</p>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<ul>
+<li><a href="https://datascience.berkeley.edu/about/what-is-data-science/">What is Data Science?</a> by <a href="mailto:datascience@Berkeley">datascience@Berkeley</a></li>
+<li><a href="http://www.dataists.com/2010/09/a-taxonomy-of-data-science/">A Taxonomy of Data Science</a> by Hilary Mason and Chris Wiggins</li>
+<li><a href="https://www.youtube.com/watch?v=cpbtcsGE0OA">“You can’t do data science in a GUI”</a> by Hadley Wickham</li>
+<li><a href="https://blogs.wsj.com/cio/2014/05/02/why-do-we-need-data-science-when-weve-had-statistics-for-centuries/">Why Do We Need Data Science When We’ve Had Statistics for Centuries?</a> by Irving Wladawsky-Berger</li>
+</ul>
 </div>
 </div>
 <div id="why-r" class="section level1">
 <h1>Why R</h1>
 <ul>
 <li><a href="https://www.r-project.org/about.html">Free, as in beer &amp; speech</a></li>
+<li>Large and growing community, with <a href="https://www.rdocumentation.org/trends">More than 15,000 packages and counting</a></li>
 <li>Powerful and flexible</li>
-<li>Large and growing community</li>
-<li><a href="https://www.rdocumentation.org/trends">More than 13,000 packages and counting</a></li>
 <li><a href="http://www.r-graph-gallery.com/">Graphics Gallery</a></li>
 <li><a href="https://shiny.rstudio.com/gallery/">Interactive Web Apps: Interactive Plots, Dashboard, Widget …</a></li>
+<li>Packages for doing statistics &amp; machine learning, creating documents, grabbing/processing data …</li>
 </ul>
-</div>
-<div id="introduction-to-r-and-rstudio" class="section level1">
-<h1>Introduction to R and RStudio</h1>
-<ol style="list-style-type: decimal">
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/">Introduction to R and RStudio</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/02-project-intro/">Project Management With RStudio</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/">Seeking help</a></li>
-</ol>
 </div>
 <div id="class-project" class="section level1">
 <h1>Class project</h1>
-<p>For the class project, you are expected to create a R package with the following requirements and commit it to GitHub: 1. Contains at least one self-contained function; 1. Completed with necessary documentation; 1. Passes R package check and test(s); 1. [Advanced] includes a vignette that demonstrates the usage of the package.</p>
+<p>For the class project, you are expected to create a re-usable R script with the following requirements and commit it to GitHub: 1. Part I 1. Contains at least one self-contained function; 1. Follows a consistent style guide; 1. Completed with necessary documentation; 1. Has at least one test that passes; 1. [Advanced] Organizes the function(s) into a package that passes the checks 2. Part II 1. Utilzes tidyverse functions as much as possible 1. [Advanced] Includes a vignette that demonstrates the usage of the package</p>
 <p>You can take and/or re-organize code from your current work or start from scratch. Take the feasibility of completing in a week into consideration when selecting project ideas.</p>
-<p>If you don’t have a feasible project idea at the moment, consider writing a R package that reads and visualizes the bike counts on Hawthorne Bridge and Tilikum Crossing. Daily traffic counts data for these two bridges can be found <a href="https://github.com/cities/datascience2017/tree/master/data">here</a>. At the minimum, your package should be able to:</p>
+<p>If you don’t have a feasible project idea at the moment, consider writing a R package that reads and visualizes the bike counts on Steel Bridge, Hawthorne Bridge, and Tilikum Crossing. Daily traffic counts data for these bridges can be found <a href="https://github.com/cities/datascience2018/tree/master/data">here</a>. At the minimum, your package should be able to:</p>
 <ul>
-<li>Read the data in the excel files</li>
-<li>Visualize bike counts on either or both bridges based on the data frame passed in;</li>
+<li>Read the data in the excel file;</li>
+<li>Process (tidy) the data as necessary;</li>
+<li>Visualize bike counts crossing a bridge based on a data frame passed in;</li>
 <li>Plot daily bike counts for any specified period;</li>
-<li>[Advanced] Plot daily, weekly, or monthly bike counts based on an frequency argument.</li>
+<li>[Advanced] Plot daily, weekly, or monthly bike counts based on a frequency argument;</li>
+<li>[Advanced] Overlay weather data for Portland and study (visualize and/or model) the effect of weather on bike traffic;</li>
+<li>[Advanced] Study (visualize and/or model) the effect of Tilikum Crossing (opened in September 2015) on bike counts crossing other bridges.</li>
 </ul>
 </div>
 

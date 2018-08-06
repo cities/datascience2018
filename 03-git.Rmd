@@ -16,7 +16,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Install Git {#install-git}
 
 ### for windows
-1. Download the Git for Windows installer.
+1. Download the Git for Windows installer from https://git-scm.com/download/win.
 1. Run the installer and follow the steps bellow:
     1. Click on "Next".
     1. Click on "Next".
@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
     1. Click on "Install".
     1. Click on "Finish".
 1. If your "HOME" environment variable is not set (or you don't know what this is):
-    1. Open command prompt (Open Start Menu then type cmd and press [Enter])
+    1. Open command prompt (Open Start Menu then type 'cmd' (without quotes) and press [Enter])
     1. Type the following line into the command prompt window exactly as shown:
          `setx HOME "%USERPROFILE%"`
     1. Press [Enter], you should see `SUCCESS: Specified value was saved`.
@@ -42,21 +42,33 @@ install `git' from your distro's package manager.
 ## Lesson
 Adapted from [Version Control with Git by Software Carpentry](http://swcarpentry.github.io/git-novice/).
 
-
 - [A quick overview of Version Control](http://swcarpentry.github.io/git-novice/01-basics/)
 - Start off by registering a github account at https://github.com
 - Use your github user name and email to config git. Open a Shell/Command line window from RStudio menu **Tools/Shell...**, and modify and run the following commands:
 ```{r, eval=FALSE}
 git config --global user.name "Liming Wang"
-git config --global user.email "lmwang@gmail.com"
+git config --global user.email "lmwang+datascience@gmail.com"
 git config --global color.ui "auto"
 ```
 
-- Let's turn the RStudio project you have been working on into a git repository and commit it to github by following these steps: http://happygitwithr.com/existing-github-last.html
+- Let's turn the RStudio project you have been working on into a git repository and commit it to GitHub by following these steps: http://happygitwithr.com/existing-github-last.html
+
 - [Cache credentials](http://happygitwithr.com/credential-caching.html)
 - [Collaborating](http://swcarpentry.github.io/git-novice/08-collab/)
 - [Conflicts](http://swcarpentry.github.io/git-novice/09-conflict/)
 - [Review of common git commands](http://happygitwithr.com/usage-git-cmds.html)
+
+## Exercise
+1. If you haven't yet, commit your RStudio project to github;
+1. Add the GitHub account of your team partner as a collaborator to your repo;
+1. Exchange URL to your github repo with your team partner;
+1. Checkout your team partner's repo in RStudio (File/New Project ..., then Verision Control);
+1. Review his/her code and add comments for suggestions where the code can be improved;
+1. Commit your change (comments) with a proper commit message;
+1. Push your commit to GitHub;
+1. After your partner pushes his/her commit, switch back to your own repo & pull to get the updated files with your partner's comments;
+1. Responded to the comments with your own comments or changes to your code, commit (with a commit message) and then push to GitHub;
+1. Repeat the above steps a few times.
 
 # Resources:
 1. [Happy Git with R](http://happygitwithr.com/)

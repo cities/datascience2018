@@ -1,0 +1,48 @@
+# Best Practices in Data Science 
+
+## Readings
+
+1. [Wilson, G., Aruliah, D. A., Brown, C. T., Hong, N. P. C., Davis, M., Guy, R. T., … Wilson, P. (2014). Best Practices for Scientific Computing. PLOS Biology, 12(1), e1001745. https://doi.org/10.1371/journal.pbio.1001745](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745)
+2. [R for Reproducible Scientific Analysis by Software Carpentry](http://swcarpentry.github.io/swc-releases/2016.06/r-novice-gapminder/16-wrap-up/)
+
+## Best practices for data science 
+
+These are the best practices for data science recommended by [Wilson et al](http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745):
+
+1. Write programs for people, not computers.
+    i. a program should not require its readers to hold more than a handful of facts in memory at once
+    i. make names consistent, distinctive, and meaningful 
+    i. make code style and formatting consistent
+1. Let the computer do the work
+    i. make the computer repeat tasks
+    i. save recent commands in a file for re-use
+    i. use a build tool to automate workflows
+1. Make incremental changes
+    i. work in small steps with frequent feedback and course correction
+    i. use a version control system
+    i. put everything that has been created manually in version control 
+1. Don’t repeat yourself (or others)
+    i. every piece of data must have a sin- gle authoritative representation in the system 
+    i. modular- ize code rather than copying and pasting
+    i. re-use code instead of rewriting it
+1. Plan for mistakes
+    i. add assertions to programs to check their operation 
+    i. use an off-the-shelf unit testing library
+    i. turn bugs into test cases
+    i. use a symbolic debugger
+1. Optimize software only after it works correctly
+    i. use a profiler to identify bottlenecks
+    i. write code in the highest-level language possible
+1. Document design and purpose, not mechanics.
+    i. document interfaces and reasons, not implementations
+    i. refactor code in preference to explaining how it works
+    i. embed the documentation for a piece of software in that software
+1. Collaborate
+    i. use pre-merge code reviews
+    i. use pair programming when bringing someone new up to speed and when tackling particularly tricky problems
+    i. use an issue tracking tool
+
+In small groups, each picks (or is assigned) a practice and discusses:
+
+1. What the current practice? why it is not a good practice and why the best practice is better?
+2. How we can move the current practice to the best practice?

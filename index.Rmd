@@ -20,8 +20,8 @@ panderOptions('keep.trailing.zeros', TRUE)
 panderOptions('keep.line.breaks', TRUE)
 ```
 
-- Course Website: https://cities.github.io/datascience2017
-- GitHub repository: https://github.com/cities/datascience2017
+- Course Website: https://cities.github.io/datascience2018
+- GitHub repository: https://github.com/cities/datascience2018
 
 # Syllabus
 
@@ -33,26 +33,27 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 
 ### Part I: Data Science Best Practices
 1. [Overview and Introduction](01-part1-overview.html)
-1. [R Coding Basics](02-coding.html)
-1. [Version Control with Git](03-git.html)
-1. [Creating R Package](04-package.html)
-1. [Producing Reports With R Markdown](05-rmarkdown.html)
-1. [Part I Wrap up](http://cities.github.io/datascience/resources.html)
+1. [Workflow and RStudio](01-rstudio.html)
+1. [R Coding and Scripting Basics](02-coding.html)
+1. [Version control using Git](03-git.html)
+1. [Data Science Best Practices](02-ds-best-practices.html)
+1. Part I Wrap Up
 
 ### Part II: tidyverse workflow
-1. [Overview of tidyverse and workflow](06-part2-overview.html)
+1. [Overview of the tidyverse workflow](06-part2-overview.html)
 1. [Data importing](07-import.html)
 1. [Tidy data](08-tidy.html)
 1. [Data manipulation with dplyr](09-dplyr.html)
 1. [Data visulization with ggplot2](10-visualize.html)
 1. [Data modeling with Split-Apply-Combine](11-split-apply-combine.html)
+1. [Producing Reports With R Markdown](05-rmarkdown.html)
 1. Part II Wrap Up
 
 ## Location and Time
-- Room: URBN 303
+- Room: Portland State University Engineering Building 315
 - Time: 
-    - Part I 8/22 - 25, 2017 1 - 5pm
-    - Part II 8/28 - 9/1, 2017 1 - 5pm
+    - Part I 8/6 - 7, 2018 9am - 5pm
+    - Part II 8/8 - 8/10, 2018 9am - 5pm
     
 ## Prerequisite
 
@@ -64,7 +65,7 @@ Classes will all be hands-on sessions with lecture, discussions and labs. Readin
 
 ## Software and Hardware
 
-This course will use R, the free statistical software, and RStudio (https://www.rstudio.com/) as our main interface to R. The lecture and lab instructions will be provided using R. It is possible (and encouraged) for existing Python users (and potentially other software, such as SPSS, Stata, Matlab, SAS, etc) to keep using the software they already know well. Student must bring their own laptop. The instructor and TA will help the students set up their laptop to run all examples/exercises. They can review/re-run the examples in lectures and labs by themselves. 
+This course will use R, the free statistical software, and RStudio (https://www.rstudio.com/) as our main interface to R. The lecture and lab instructions will be provided using R. Student must bring their own laptop. The instructor and TA will help the students set up their laptop to run all examples/exercises. They can review/re-run the examples in lectures and labs by themselves. 
 
 ## Textbook and Readings
 
@@ -73,10 +74,6 @@ The course will use the following textbook:
 - [Wickham, H., Grolemund, G., 2017. R for Data Science: Import, Tidy, Transform, Visualize, and Model Data, 1 edition. ed. O’Reilly Media](https://www.amazon.com/Data-Science-Transform-Visualize-Model/dp/1491910399).
 
 An electronic version is available on [Hadley Wickham's website](http://r4ds.had.co.nz/).
-
-For Python users, Wes McKinney’s book is recommended:
-
-- [McKinney, W., 2012. Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython, 1 edition. ed. O’Reilly Media](https://www.amazon.com/Python-Data-Analysis-Wrangling-IPython/dp/1449319793).
 
 Journal articles and online resources are used as supplements to the textbook.
 
@@ -95,7 +92,9 @@ Parts of the course materials have been adpated from the following sources:
 - [UBC Stat 545](http://stat545.com) by Professor Jenny Bryan at UBC
 - [NEU 5110 Introduction to Data Science](http://janvitek.org/events/NEU/5110/) by Professor Jan Vitek
 
-The writing-up and website is powered by the [bookdown](https://bookdown.org) package and [github](https://www.github.com).
+I would also acknowledge the [Oregon Modeling User Group](https://www.oregonmodels.org/) in providing feedback to the course development and in helping promoting it. I am grateful to Taylor Sutton (PBOT) for kindly sharing the bike counts data used in the course demostration and project.
+
+The writing-up and website is powered by the [blogdown](https://bookdown.org/yihui/blogdown/) package and [github](https://www.github.com).
 
 # License
 

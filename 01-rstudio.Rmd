@@ -1,0 +1,42 @@
+
+# Introduction to R and RStudio
+
+1. [Introduction to R and RStudio](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/)
+1. [RStudio Workfow Basics](http://r4ds.had.co.nz/workflow-projects.html)
+1. [RStudio Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf)
+1. [Seeking help](http://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/)
+
+## Project orgnization in RStudio
+
+R experts keep all the files associated with a project together — input data, R scripts, analytical results, figures. This is such a wise and common practice that RStudio has built-in support for this via projects. For example, a project can be a R package under development, or code, data and documents for a research project, or a book project (for example, Hadley use a RStudio project for the R for Data Science book at https://github.com/hadley/r4ds). 
+
+A RStudio project must contain a file with extension Rproj and can contain any files within the directory where the project file lives or its subdirectories. Typical types of files in a RStudio project include:
+  - R Script
+  - R Markdown, R notebook
+  - R Presentation
+  - Shiny Web App
+  - Text file, C++, html, ...
+
+Hadley recommends the following for RStudio projects workflow:
+
+- Create an RStudio project for each data analyis project.
+- Keep data files there and load them into R with data import.
+- Keep scripts there; edit them, run them in bits or as a whole.
+- Save your outputs (plots and cleaned data) there.
+- Only ever use relative paths (relative to the root path of the project), not absolute paths.
+
+Everything you need is in one place, and cleanly separated from all the other projects that you are working on.
+
+I recommend organizing files in subdirectories by types, typically with at least these items:
+  - project_name.Rproj, RStudio project file
+  - README.md, a description file of the project
+  - code, for R scripts
+  - data, for data files
+  - docs, for document/report files, such as R Markdown files
+
+## Exercise 
+
+Create an RStudio project for this class on your laptop, set up directory structure as recommended above, download [the bike counts data file](https://github.com/cities/datascience2018/tree/master/data) and save them in the data directory of your RStudio project. Create a new R script from the File menu and save it as `load_data.R` into your code directory; we will populate it with R code that loads data in the next lesson.
+
+## Resources:
+- [RStudio Documentation](https://support.rstudio.com/hc/en-us/sections/200107586-Using-the-RStudio-IDE)

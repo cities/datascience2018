@@ -20,24 +20,12 @@
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<meta name="description" content="USP 634 Data Analysis I at Portland State Univeristy" />
+<meta name="description" content="Introduction to Data Science at Portland State Univeristy" />
 
 <script type="text/javascript" src="js/rmarkdown.js"></script>
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-38176783-3', 'auto');
-  ga('send', 'pageview');
-
-</script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -46,10 +34,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -104,6 +94,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -188,7 +181,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2017</a>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2018</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -222,7 +215,7 @@ $(document).ready(function () {
 <div id="for-windows" class="section level3">
 <h3>for windows</h3>
 <ol style="list-style-type: decimal">
-<li>Download the Git for Windows installer.</li>
+<li>Download the Git for Windows installer from <a href="https://git-scm.com/download/win" class="uri">https://git-scm.com/download/win</a>.</li>
 <li>Run the installer and follow the steps bellow:
 <ol style="list-style-type: decimal">
 <li>Click on “Next”.</li>
@@ -236,7 +229,7 @@ $(document).ready(function () {
 </ol></li>
 <li>If your “HOME” environment variable is not set (or you don’t know what this is):
 <ol style="list-style-type: decimal">
-<li>Open command prompt (Open Start Menu then type cmd and press [Enter])</li>
+<li>Open command prompt (Open Start Menu then type ‘cmd’ (without quotes) and press [Enter])</li>
 <li>Type the following line into the command prompt window exactly as shown: <code>setx HOME &quot;%USERPROFILE%&quot;</code></li>
 <li>Press [Enter], you should see <code>SUCCESS: Specified value was saved</code>.</li>
 <li>Quit command prompt by typing exit then pressing [Enter]</li>
@@ -261,15 +254,30 @@ $(document).ready(function () {
 <li>Use your github user name and email to config git. Open a Shell/Command line window from RStudio menu <strong>Tools/Shell…</strong>, and modify and run the following commands:</li>
 </ul>
 <pre class="r"><code>git config --global user.name &quot;Liming Wang&quot;
-git config --global user.email &quot;lmwang@gmail.com&quot;
+git config --global user.email &quot;lmwang+datascience@gmail.com&quot;
 git config --global color.ui &quot;auto&quot;</code></pre>
 <ul>
-<li>Let’s turn the RStudio project you have been working on into a git repository and commit it to github by following these steps: <a href="http://happygitwithr.com/existing-github-last.html" class="uri">http://happygitwithr.com/existing-github-last.html</a></li>
+<li><p>Let’s turn the RStudio project you have been working on into a git repository and commit it to GitHub by following these steps: <a href="http://happygitwithr.com/existing-github-last.html" class="uri">http://happygitwithr.com/existing-github-last.html</a></p></li>
 <li><a href="http://happygitwithr.com/credential-caching.html">Cache credentials</a></li>
 <li><a href="http://swcarpentry.github.io/git-novice/08-collab/">Collaborating</a></li>
 <li><a href="http://swcarpentry.github.io/git-novice/09-conflict/">Conflicts</a></li>
-<li><a href="http://happygitwithr.com/usage-git-cmds.html">Review of common git commands</a></li>
+<li><p><a href="http://happygitwithr.com/usage-git-cmds.html">Review of common git commands</a></p></li>
 </ul>
+</div>
+<div id="exercise" class="section level2">
+<h2>Exercise</h2>
+<ol style="list-style-type: decimal">
+<li>If you haven’t yet, commit your RStudio project to github;</li>
+<li>Add the GitHub account of your team partner as a collaborator to your repo;</li>
+<li>Exchange URL to your github repo with your team partner;</li>
+<li>Checkout your team partner’s repo in RStudio (File/New Project …, then Verision Control);</li>
+<li>Review his/her code and add comments for suggestions where the code can be improved;</li>
+<li>Commit your change (comments) with a proper commit message;</li>
+<li>Push your commit to GitHub;</li>
+<li>After your partner pushes his/her commit, switch back to your own repo &amp; pull to get the updated files with your partner’s comments;</li>
+<li>Responded to the comments with your own comments or changes to your code, commit (with a commit message) and then push to GitHub;</li>
+<li>Repeat the above steps a few times.</li>
+</ol>
 </div>
 </div>
 <div id="resources" class="section level1">

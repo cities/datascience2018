@@ -15,11 +15,11 @@ http://cities.github.io/datascience/import.html
 
 # Exercise
 
-[Link to the README file for the data](https://github.com/cities/datascience2017/blob/master/data/README.md)
+[Link to the README file for the data](https://github.com/cities/datascience2018/blob/master/data/README.md)
 
 1. What is the difference between a data.frame and tibble? How do you convert between them?
-1. Import the bike counts data for [Hawthorne](https://github.com/cities/datascience2017/raw/master/data/Hawthorne%20Bridge%20daily%20bike%20counts%202012-2016%20082117.xlsx) and [Tilikum](https://github.com/cities/datascience2017/raw/master/data/Tilikum%20Crossing%20daily%20bike%20counts%202015-16%20082117.xlsx) in Microsoft Excel format;
-1. Import the [Portland weather data in csv format](https://github.com/cities/datascience2017/raw/master/data/NCDC-CDO-PortlandOR.csv);
-1. [Challenge] Import the [Portland weather data in fixed width format](https://github.com/cities/datascience2017/raw/master/data/NCDC-CDO-USC00356750.txt);
+1. Import the bike counts data for the three bridges in Microsoft Excel format;
+1. Import the [Portland weather data in csv format](https://github.com/cities/datascience2017/raw/master/data/NCDC-CDO-USC00356750.csv);
+1. [Challenge] Import the [Portland weather data in fixed width format](https://github.com/cities/datascience2018/raw/master/data/NCDC-CDO-USC00356750.txt);
 1. For those already familiar with R, create a R script that loads, cleans, and visualizes the bike counts data as well as temperature and precipitation data (using data from Weather Station `USC00356750`); <p>
 for those not yet familiar with R, think about how you would go about doing these tasks with the software you are most comfortable with.

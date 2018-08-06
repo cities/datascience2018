@@ -34,7 +34,7 @@ dplyr is designed to abstract over how the data is stored. That means as well as
 Recoding, when to use which function:
 - one-to-one, many-to-one: `recode` and `recode_factor`
 
-Download the NHTS 2009 data file for the demos [here](https://raw.githubusercontent.com/cities/datascience2017/master/data/NHTS2009_dd.csv) (Right click & select Save As...)
+Download the NHTS 2009 data file for the demos [here](https://raw.githubusercontent.com/cities/datascience2018/master/data/NHTS2009_dd.csv) (Right click & select Save As...)
 
 ```{r, echo=TRUE}
 library(tidyverse)
@@ -96,7 +96,7 @@ dd %>% group_by(HHFAMINC, income_cat) %>%
 1. Filter days where there are missing values in bike counts and weather information. Count number of days with missing values on either bike counts or weather information.
 1. Calculate weekly, monthly, and annual bike counts from the daily bike counts data.
 1. Join the bike counts data with the weather data. Which type of joins works best here?
-1. With the [NHTS2009 travel diaries data](https://raw.githubusercontent.com/cities/datascience2017/master/data/NHTS2009_dd.csv), how do you cacluate total miles traveled (using any modes) and miles traveled by driving for each household (hint: the TRPMILES column contains information of trip distance for each member of a household).
+1. With the [NHTS2009 travel diaries data](https://raw.githubusercontent.com/cities/datascience2018/master/data/NHTS2009_dd.csv), how do you cacluate total miles traveled (using any modes) and miles traveled by driving for each household (hint: the TRPMILES column contains information of trip distance for each member of a household).
 1. [Challenge] How do you compute the average household-level miles driving per capita by income categories (low, med, high)?
 
 # Resources:

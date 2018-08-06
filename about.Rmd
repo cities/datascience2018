@@ -20,7 +20,9 @@ Parts of the course materials have been adpated from the following sources:
 - [UBC Stat 545](http://stat545.com) by Professor Jenny Bryan at UBC
 - [NEU 5110 Introduction to Data Science](http://janvitek.org/events/NEU/5110/) by Professor Jan Vitek
 
-The writing-up and website is powered by the [bookdown](https://bookdown.org) package and [github](https://www.github.com).
+I would also acknowledge the [Oregon Modeling User Group](https://www.oregonmodels.org/) in providing feedback to the course development and in helping promoting it.
+
+The writing-up and website is powered by the [blogdown](https://bookdown.org/yihui/blogdown/) package and [github](https://www.github.com).
 
 # License
 

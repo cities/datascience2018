@@ -11,77 +11,173 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# R Coding Basics
+## The tidyverse packages
+- Website: http://www.tidyverse.org/packages/
+- Install with `install.packages("tidyverse")`
 
-This section assumes students know little about R and gets them up to speed with the basics:
+## R Coding Basics
+
+This section assumes students know little about R and gets them up to speed with the basics. I am now convinced that it might be easier to teach beginners `tidyverse` than the base R, as argued by [David Robinson](http://varianceexplained.org/r/teach-tidyverse/). We will dive right into tidyverse, which will be covered in more depth in Part II.
+
+1. [Introduction](http://r4ds.had.co.nz/explore-intro.html)
+1. [Coding Basic](http://r4ds.had.co.nz/workflow-basics.html)
+1. [Import Data into R](http://r4ds.had.co.nz/data-import.html)
+1. [Data Transformation](http://r4ds.had.co.nz/transform.html)
+1. [Visualization with ggplot2](http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/)
+    - How can I create publication-quality graphics in R?
+1. *[Exploratory Data Analysis](http://r4ds.had.co.nz/exploratory-data-analysis.html)*
+1. [Functions](http://r4ds.had.co.nz/functions.html)
+1. [Vector](http://r4ds.had.co.nz/vectors.html)
+1. [Writing Good Software](http://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/)
+    - How can I write software that other people can use?
+ 
+
+However, if you prefer or are more comfortable with base R, these lessons by Software Carpentry covers more or less similar contents with mostly base R  functions:
 
 1. [Data Structures](http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/)
-    - How can I read data in R? 
-    - What are the basic data types in R? 
+    - How can I read data in R?
+    - What are the basic data types in R?
     - How do I represent categorical information in R?
 1. [Exploring Data Frames](http://swcarpentry.github.io/r-novice-gapminder/05-data-structures-part2/)
     - How can I manipulate a data frame?
-1. [Subsetting Data](http://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/)
+1. *[Subsetting Data](http://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/)*
     - How can I work with subsets of data in R?
-1. [Control Flow](http://swcarpentry.github.io/r-novice-gapminder/07-control-flow/)
-    - How can I work with subsets of data in R?
+1. *[Control Flow](http://swcarpentry.github.io/r-novice-gapminder/07-control-flow/)*
+    - How can I make data-dependent choices in R?
+    - How can I repeat operations in R?
 1. [Visualization with ggplot2](http://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/)
     - How can I create publication-quality graphics in R?
-1. [Vectorization](http://swcarpentry.github.io/r-novice-gapminder/09-vectorization/)
+1. *[Vectorization](http://swcarpentry.github.io/r-novice-gapminder/09-vectorization/)*
     - How can I operate on all the elements of a vector at once?
 1. [Functions Explained](http://swcarpentry.github.io/r-novice-gapminder/10-functions/)
-    - How can I write a new function in R? 
+    - How can I write a new function in R?
 1. [Writing Good Software](http://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/)
     - How can I write software that other people can use?
 
-# Code Style Guide
+## Pipe operator
+`%>%` pipes an object forward into a function or call expression
+
+- Basic piping
+    - x %>% f is equivalent to f(x)
+    - x %>% f(y) is equivalent to f(x, y)
+    - x %>% f %>% g %>% h is equivalent to h(g(f(x)))
+
+- Using `%>%` with unary function calls
+```{r, echo=TRUE}
+require(tidyverse)
+iris %>% head
+iris %>% tail
+```
+
+- Placing lhs as the first argument in rhs call
+```{r, echo=TRUE, eval=FALSE}
+## What are the outputs for these lines?
+3 %>% `-`(4)
+iris %>% head(5)
+iris %>% tail(5)
+```
+
+- Placing lhs elsewhere in rhs call
+```{r, echo=TRUE, eval=FALSE}
+## What are the outputs for these
+3 %>% `-`(4, .)
+4 %>% c("A", "B", "C", "D", "E")[.]
+```
+
+More information available at: http://magrittr.tidyverse.org/
+
+RStudio keyboard shortcut for `%>%`:
+
+- Ctrl-Shift-M (Windows)
+- Command-Shift-M (Mac)
+
+## Code Style Guide
 
 In programming as in writing, it is generally a good idea to stick to a consitent coding style. There are two style guides that you can adopt or customize to create your own:
 
 - [Google's R style guide](https://google.github.io/styleguide/Rguide.xml)
 - [Hadley Wickham's code style guide](http://adv-r.had.co.nz/Style.html)
 
-# R Command-Line Program
+### R Command-Line Program
 
 RStudio is good for writing and testing your R code, but for work that needs repetitions or takes a long time to finish, it may be easier to run your program/script in command line instead. 
 
-For example, for the gapminder script we created on day 1, we can run it in a command line shell (you can open one in RStudio's Tools/Shell... menu):
+Before we start, open the RStudio project you created following [the RStudio project organization recomendations](#rstudio-project) in the Overview section (assuming you downloaded and saved the bike counts data to the `data` directory of the project).
+
+We can create an R script (from the **File/New File/R Script** menu of RStudio) that load the bike counts for Hawthorne Bridge:
+
 ```{r, eval=FALSE}
-Rscript code/load_gapminder.R
+library(tidyverse)
+
+input_file <- "data/Hawthorne Tilikum Steel daily bike counts 073118.xlsx"
+bridge_name <- "Hawthorne"
+bikecounts <- read_excel(input_file,        #path - the path to the input excel file
+                         sheet=bridge_name, #name/number of the sheet, it uses name of the bridge
+                         skip=1)            #since each worksheet has a two-row header, skip the first row
+#names(bikecounts) <- c("date", "westbound", "eastbound", "total")
+bikecounts$bridge <- bridge_name
+
+head(bikecounts)
 ```
 
-Notice that your script may not print out outputs on the screen when called in the command line unless you explicitly call the `print` function.
+Choose a file name, for example, `load_data.R`, and save the script in the code directory of your RStudio project (created a `code` directory first if you haven't yet).
 
-But what if we have many files for which we would like to repeatedly show the basic information (rows, data types etc)? We can refactor our script to accept the file name from command line arguments, so that the script can work with any acceptable files.
+Now we can run the script in a command line shell (you can open one in **RStudio's Tools/Shell...** menu):
+```{r, eval=FALSE}
+Rscript code/load_data.R
+```
 
-In a R script, you can use `commandArgs` function to get the command line arguments:
+Notice that the script may not print out outputs on the screen when called in the command line unless you explicitly call the `print` function.
+
+But what if we have many files for which we would like to repeatedly show the basic information (rows, data types etc)? We can refactor our script to accept the file name and bridge name from command line arguments, so that the script can work with any acceptable files.
+
+In an R script, you can use `commandArgs` function to get the command line arguments:
 
 ```{r, eval=FALSE}
 args <- commandArgs()
 print(args)
 ```
 
-So if your script only takes 1 argument for the file name, you can get the value of the argument with:
+So in our case, our script should take input_file and bridge_name from the command line arguments, we can get the value of the arguments with:
 
 ```{r, eval=FALSE}
 args <- commandArgs()
-file_name <- args[1]
+input_file <- args[1]
+bridge_name <- args[2]
 ```
 
-Now modify your code so that it can be invoked in the command line with:
+Replace the two lines in `load_data.R` starting with `input_file` and `bridge_name` with these three lines.
+
+Now our script can be invoked in the command line with:
 ```{r, eval=FALSE}
-Rscript code/load_gapminder.R data/gapminder-FiveYearData.csv 
+Rscript code/load_data.R "data/Hawthorne Tilikum Steel daily bike counts 073118.xlsx" \
+Hawthorne
 ```
 
-# Debugging with RStudio
+(The quotation marks are needed for the file name when there are spaces in the name and "\" breaks a command into two lines.)
+
+
+### (Optional) Debugging with RStudio
 
 This section is adapted from [Visual Debugging with RStudio](http://www.milanor.net/blog/visual-debugging-with-rstudio/).
 
-1. Download `foo.R` from https://raw.githubusercontent.com/cities/datascience2017/master/code/foo.R and save it to the `code` (or `src`) subdirctory of your project folder;
+1. Download `foo.R` from https://raw.githubusercontent.com/cities/datascience2017/master/code/foo.R and save it to the `code` dirctory of your project folder;
+
 1. Open `foo.R` and `source` it;
 1. In the RStudio Console pane of type `foo("-1")` and then enter.
 
 Why does the `foo` function claim "-1 is larger than 0"? Let's debug the `foo` function and find out.
 
+## Exercise
+1. Write a function that takes a spreadsheet number and name of a bridge as inputs and return a data frame from the bike counts spreadsheet;
+    - use the `read_excel` function in the `readxl` package to read data in excel files
+2. Create an R script that utilizes your function to read in bike counts data for all three bridges;
+3. Do quick summaries of the data for each brigde:
+    - How many days of data are there for each bridge?
+    - What are the average daily bike counts for each bridge? Minimum? Maximum?
+    - What are the average monthly and annual bike counts for each bridge?
+4. [Advanced] Write a function that calculates average daily, weekly, or monthly bike counts for each bridge based on a frequency argument.
+
 # Resources:
 - [Introduction to R on Data Camp](https://campus.datacamp.com/courses/free-introduction-to-r/chapter-1-intro-to-basics-1?ex=1): A self-instruction course covering R basics.
+- [Teach the tidyverse to beginners](http://varianceexplained.org/r/teach-tidyverse/)

@@ -1,2 +1,2 @@
-# datascience2017
-Intro to Data Science 2017
+
+[Introduction to Data Science Summer 2018](http://cities.github.io/datascience2018)
