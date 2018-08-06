@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<meta name="description" content="Introduction to Data Science at Portland State Univeristy" />
+
+<script type="text/javascript" src="js/rmarkdown.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="css/rmarkdown.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2018</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="best-practices-in-data-science" class="section level1">
+<h1>Best Practices in Data Science</h1>
+<div id="readings" class="section level2">
+<h2>Readings</h2>
+<ol style="list-style-type: decimal">
+<li><a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Wilson, G., Aruliah, D. A., Brown, C. T., Hong, N. P. C., Davis, M., Guy, R. T., … Wilson, P. (2014). Best Practices for Scientific Computing. PLOS Biology, 12(1), e1001745. https://doi.org/10.1371/journal.pbio.1001745</a></li>
+<li><a href="http://swcarpentry.github.io/swc-releases/2016.06/r-novice-gapminder/16-wrap-up/">R for Reproducible Scientific Analysis by Software Carpentry</a></li>
+</ol>
+</div>
+<div id="best-practices-for-data-science" class="section level2">
+<h2>Best practices for data science</h2>
+<p>These are the best practices for data science recommended by <a href="http://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">Wilson et al</a>:</p>
+<ol style="list-style-type: decimal">
+<li>Write programs for people, not computers.
+<ol style="list-style-type: lower-roman">
+<li>a program should not require its readers to hold more than a handful of facts in memory at once</li>
+<li>make names consistent, distinctive, and meaningful</li>
+<li>make code style and formatting consistent</li>
+</ol></li>
+<li>Let the computer do the work
+<ol style="list-style-type: lower-roman">
+<li>make the computer repeat tasks</li>
+<li>save recent commands in a file for re-use</li>
+<li>use a build tool to automate workflows</li>
+</ol></li>
+<li>Make incremental changes
+<ol style="list-style-type: lower-roman">
+<li>work in small steps with frequent feedback and course correction</li>
+<li>use a version control system</li>
+<li>put everything that has been created manually in version control</li>
+</ol></li>
+<li>Don’t repeat yourself (or others)
+<ol style="list-style-type: lower-roman">
+<li>every piece of data must have a sin- gle authoritative representation in the system</li>
+<li>modular- ize code rather than copying and pasting</li>
+<li>re-use code instead of rewriting it</li>
+</ol></li>
+<li>Plan for mistakes
+<ol style="list-style-type: lower-roman">
+<li>add assertions to programs to check their operation</li>
+<li>use an off-the-shelf unit testing library</li>
+<li>turn bugs into test cases</li>
+<li>use a symbolic debugger</li>
+</ol></li>
+<li>Optimize software only after it works correctly
+<ol style="list-style-type: lower-roman">
+<li>use a profiler to identify bottlenecks</li>
+<li>write code in the highest-level language possible</li>
+</ol></li>
+<li>Document design and purpose, not mechanics.
+<ol style="list-style-type: lower-roman">
+<li>document interfaces and reasons, not implementations</li>
+<li>refactor code in preference to explaining how it works</li>
+<li>embed the documentation for a piece of software in that software</li>
+</ol></li>
+<li>Collaborate
+<ol style="list-style-type: lower-roman">
+<li>use pre-merge code reviews</li>
+<li>use pair programming when bringing someone new up to speed and when tackling particularly tricky problems</li>
+<li>use an issue tracking tool</li>
+</ol></li>
+</ol>
+<p>In small groups, each picks (or is assigned) a practice and discusses:</p>
+<ol style="list-style-type: decimal">
+<li>What the current practice? why it is not a good practice and why the best practice is better?</li>
+<li>How we can move the current practice to the best practice?</li>
+</ol>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>

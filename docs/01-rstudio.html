@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+
+<meta name="description" content="Introduction to Data Science at Portland State Univeristy" />
+
+<script type="text/javascript" src="js/rmarkdown.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="css/rmarkdown.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Introduction to Data Science Summer 2018</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="introduction-to-r-and-rstudio" class="section level1">
+<h1>Introduction to R and RStudio</h1>
+<ol style="list-style-type: decimal">
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/">Introduction to R and RStudio</a></li>
+<li><a href="http://r4ds.had.co.nz/workflow-projects.html">RStudio Workfow Basics</a></li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf">RStudio Cheatsheet</a></li>
+<li><a href="http://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/">Seeking help</a></li>
+</ol>
+<div id="project-orgnization-in-rstudio" class="section level2">
+<h2>Project orgnization in RStudio</h2>
+<p>R experts keep all the files associated with a project together — input data, R scripts, analytical results, figures. This is such a wise and common practice that RStudio has built-in support for this via projects. For example, a project can be a R package under development, or code, data and documents for a research project, or a book project (for example, Hadley use a RStudio project for the R for Data Science book at <a href="https://github.com/hadley/r4ds" class="uri">https://github.com/hadley/r4ds</a>).</p>
+<p>A RStudio project must contain a file with extension Rproj and can contain any files within the directory where the project file lives or its subdirectories. Typical types of files in a RStudio project include: - R Script - R Markdown, R notebook - R Presentation - Shiny Web App - Text file, C++, html, …</p>
+<p>Hadley recommends the following for RStudio projects workflow:</p>
+<ul>
+<li>Create an RStudio project for each data analyis project.</li>
+<li>Keep data files there and load them into R with data import.</li>
+<li>Keep scripts there; edit them, run them in bits or as a whole.</li>
+<li>Save your outputs (plots and cleaned data) there.</li>
+<li>Only ever use relative paths (relative to the root path of the project), not absolute paths.</li>
+</ul>
+<p>Everything you need is in one place, and cleanly separated from all the other projects that you are working on.</p>
+<p>I recommend organizing files in subdirectories by types, typically with at least these items: - project_name.Rproj, RStudio project file - README.md, a description file of the project - code, for R scripts - data, for data files - docs, for document/report files, such as R Markdown files</p>
+</div>
+<div id="exercise" class="section level2">
+<h2>Exercise</h2>
+<p>Create an RStudio project for this class on your laptop, set up directory structure as recommended above, download <a href="https://github.com/cities/datascience2018/tree/master/data">the bike counts data file</a> and save them in the data directory of your RStudio project. Create a new R script from the File menu and save it as <code>load_data.R</code> into your code directory; we will populate it with R code that loads data in the next lesson.</p>
+</div>
+<div id="resources" class="section level2">
+<h2>Resources:</h2>
+<ul>
+<li><a href="https://support.rstudio.com/hc/en-us/sections/200107586-Using-the-RStudio-IDE">RStudio Documentation</a></li>
+</ul>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>
