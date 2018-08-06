@@ -27,11 +27,10 @@ If you see a popup box that says "Clone Repsitory" with a progress bar and then 
 # Why R
 
 - [Free, as in beer & speech](https://www.r-project.org/about.html)
+- Large and growing community, with [More than 13,000 packages and counting](https://www.rdocumentation.org/trends)
 - Powerful and flexible
-- Large and growing community
-- [More than 13,000 packages and counting](https://www.rdocumentation.org/trends)
-- [Graphics Gallery](http://www.r-graph-gallery.com/)
-- [Interactive Web Apps: Interactive Plots, Dashboard, Widget ...](https://shiny.rstudio.com/gallery/)
+  - [Graphics Gallery](http://www.r-graph-gallery.com/)
+  - [Interactive Web Apps: Interactive Plots, Dashboard, Widget ...](https://shiny.rstudio.com/gallery/)
 
 # Introduction to R and RStudio
 1. [Introduction to R and RStudio](http://swcarpentry.github.io/r-novice-gapminder/01-rstudio-intro/)

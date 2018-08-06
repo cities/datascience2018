@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # R Coding Basics
 
-This section assumes students know little about R and gets them up to speed with the basics
+This section assumes students know little about R and gets them up to speed with the basics:
 
 1. [Data Structures](http://swcarpentry.github.io/r-novice-gapminder/04-data-structures-part1/)
     - How can I read data in R? 
@@ -85,4 +85,3 @@ Why does the `foo` function claim "-1 is larger than 0"? Let's debug the `foo` f
 
 # Resources:
 - [Introduction to R on Data Camp](https://campus.datacamp.com/courses/free-introduction-to-r/chapter-1-intro-to-basics-1?ex=1): A self-instruction course covering R basics.
-- 
