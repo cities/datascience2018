@@ -56,6 +56,7 @@ Data Science Venn Diagram by Drew Conway
 # Class project
 
 For the class project, you are expected to create a re-usable R script with the following requirements and commit it to GitHub:
+
 1. Part I
     1. Contains at least one self-contained function;
     1. Follows a consistent style guide;
