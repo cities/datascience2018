@@ -20,7 +20,7 @@ panderOptions('keep.trailing.zeros', TRUE)
 panderOptions('keep.line.breaks', TRUE)
 ```
 
-- Course Website: [https://cities.github.io/datascience2018](https://cities.github.io/datascience2018/index.html)
+- Course Website: https://cities.github.io/datascience2018
 - GitHub repository: https://github.com/cities/datascience2018
 
 # Syllabus
@@ -35,6 +35,7 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 1. [Overview and Introduction](01-part1-overview.html)
 1. [Workflow and RStudio](01-rstudio.html)
 1. [R Coding and Scripting Basics](02-coding.html)
+1. [Working with GIS](02-gis.html)
 1. [Version control using Git](03-git.html)
 1. [Data Science Best Practices](02-ds-best-practices.html)
 1. Part I Wrap Up

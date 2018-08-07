@@ -39,3 +39,9 @@ NHTS 2009 travel diaries subset (the first 300 observations)
 - Data Dictionary: http://nhts.ornl.gov/tables09/CodebookBrowser.aspx
 - Format: CSV
 - Access Date: 08/29/2017
+
+# Portland94_geocode.raw.zip
+geocode raw file from 1994 Portland Household Survey
+- Metropolitan Travel Survey Archive at Univ of MN
+- ULR: http://www.surveyarchive.org/
+- Data Dictionary: http://www.surveyarchive.org/Oregon/reports.zip
