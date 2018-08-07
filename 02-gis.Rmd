@@ -43,6 +43,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(tidycensus)
 library(ggplot2)
+library(dplyr)
+
 ## setup cenus api key
 ## signup your census api key at http://api.census.gov/data/key_signup.html
 #census_api_key("YOUR_CENSUS_API_KEY") # 
@@ -53,9 +55,12 @@ portland_tract_medhhinc <- get_acs(geography = "tract",
                         county = c("Multnomah County", "Washington County", "Clackamas County"),
                         geometry = TRUE) # load geometry/gis info
 
-ggplot(portland_tract_medhhinc) + 
+(myplot <- ggplot(portland_tract_medhhinc) + 
   geom_sf(aes(fill = estimate)) +
-  coord_sf(datum = NA) + theme_minimal()
+  coord_sf(datum = NA) + theme_minimal())
+
+ggsave("output/mymap.pdf", myplot)
+
 ```
 
 ### Interactive Maps of ACS 2012-16 Median Household Income by Census Tract
