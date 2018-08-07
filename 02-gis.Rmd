@@ -65,6 +65,7 @@ ggplot(portland_tract_medhhinc) +
 #install.packages("mapview")
 library(sf)
 library(mapview)
+library(dplyr)
 
 mapview(portland_tract_medhhinc %>% select(estimate), 
         col.regions = sf.colors(10), alpha = 0.1)
