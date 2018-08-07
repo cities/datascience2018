@@ -45,3 +45,6 @@ geocode raw file from 1994 Portland Household Survey
 - Metropolitan Travel Survey Archive at Univ of MN
 - ULR: http://www.surveyarchive.org/
 - Data Dictionary: http://www.surveyarchive.org/Oregon/reports.zip
+
+# taz1260.shp etc
+Portland Metro TAZ shape file (1990s vintage)

@@ -400,6 +400,75 @@ Hawthorne</code></pre>
 </ul></li>
 <li>[Advanced] Write a function that calculates average daily, weekly, or monthly bike counts for each bridge based on a frequency argument.</li>
 </ol>
+<div id="my-code-example" class="section level3">
+<h3>My code example</h3>
+<pre class="r"><code>library(readxl)
+library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     date</code></pre>
+<pre class="r"><code>input_file &lt;- &quot;data/Hawthorne Tilikum Steel daily bike counts 073118.xlsx&quot;
+bridge_name &lt;- &quot;Hawthorne&quot;
+
+# define a funtion that load bike counts data
+load_data &lt;- function(input_file, bridge_name) {
+  bikecounts &lt;- read_excel(input_file,
+                           sheet = bridge_name,
+                           skip = 1)
+  bikecounts$name &lt;- bridge_name
+  bikecounts
+}
+
+Tilikum &lt;- load_data(input_file, &quot;Tilikum&quot;)
+Hawthorne &lt;- load_data(input_file, &quot;Hawthorne&quot;)
+
+# use the column names of Tilikum for Hawthorne
+names(Hawthorne) &lt;- names(Tilikum)
+
+Steel &lt;- load_data(input_file, &quot;Steel&quot;)
+names(Steel) &lt;- c(&quot;date&quot;, &quot;lower&quot;, &quot;westbound&quot;, &quot;eastbound&quot;, &quot;total&quot;, &quot;name&quot;)
+
+# combine all three data frame for all three bridges
+bikecounts &lt;- bind_rows(Hawthorne, 
+                        Tilikum, 
+                        Steel %&gt;% select(-lower)) # exclude the `lower` col in Steel data frame
+
+# average daily bike counts by bridge
+bikecounts %&gt;% 
+  group_by(name) %&gt;% 
+  summarize(avg_daily_counts=mean(total, na.rm=TRUE))</code></pre>
+<pre><code>## # A tibble: 3 x 2
+##   name      avg_daily_counts
+##   &lt;chr&gt;                &lt;dbl&gt;
+## 1 Hawthorne            3904.
+## 2 Steel                2240.
+## 3 Tilikum              1725.</code></pre>
+<pre class="r"><code># average monthly bike counts by bridge
+bikecounts %&gt;% 
+  # first create ym column as a unique month identifier
+  group_by(name, ym=floor_date(date, &quot;month&quot;)) %&gt;%
+  summarize(total_monthly_counts=sum(total), counts=n()) %&gt;% 
+  # then average by month over years for each bridge
+  group_by(name, month(ym)) %&gt;% 
+  summarize(avg_monthly_counts=mean(total_monthly_counts))</code></pre>
+<pre><code>## # A tibble: 36 x 3
+## # Groups:   name [?]
+##    name      `month(ym)` avg_monthly_counts
+##    &lt;chr&gt;           &lt;dbl&gt;              &lt;dbl&gt;
+##  1 Hawthorne           1             79782.
+##  2 Hawthorne           2             81534.
+##  3 Hawthorne           3            100500.
+##  4 Hawthorne           4            130006.
+##  5 Hawthorne           5            155227.
+##  6 Hawthorne           6            151171.
+##  7 Hawthorne           7            138820.
+##  8 Hawthorne           8            164198.
+##  9 Hawthorne           9            142954.
+## 10 Hawthorne          10            126626 
+## # ... with 26 more rows</code></pre>
+</div>
 </div>
 <div id="resources" class="section level1">
 <h1>Resources:</h1>
