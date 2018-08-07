@@ -179,6 +179,9 @@ Why does the `foo` function claim "-1 is larger than 0"? Let's debug the `foo` f
 4. [Advanced] Write a function that calculates average daily, weekly, or monthly bike counts for each bridge based on a frequency argument.
 
 ### My code example
+
+[Download the file](code/load_data.R)
+
 ```{r}
 library(readxl)
 library(lubridate)
