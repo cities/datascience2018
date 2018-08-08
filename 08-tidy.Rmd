@@ -33,6 +33,32 @@ Download the script that generates the tables for the lesson [here](https://raw.
 1. If not, why not? And how can we tidy it?
 1. Convert the total bike counts data to a wide format, with each row representing a day, and a column representing the total bike counts for each of the three bridges;
 1. Convert the above data frame in wide format back to long format. 
+1. [Challenge] After tidying the bike counts, using functions in the `tidyr` package, create tables summarizing the average bike counts by bridge and day of week in two different formats:
+
+
+```{r tab-format1, echo=FALSE}
+library(tidyverse)
+options(knitr.kable.NA = '')
+counts_dow <- tribble(
+  ~Bridge, ~Sun, ~Mon, ~Tue, ~Wed, ~Thur, ~Fri, ~Sat,
+  "Hawthorne", NA, NA, NA, NA, NA, NA, NA,
+  "Tilikum", NA, NA, NA, NA, NA, NA, NA
+) 
+
+counts_dow %>% 
+  pander::pander(caption="Bike Counts by Day of Week and Bridge (1st Format)",
+                 missing="")
+```
+
+```{r tab-format2, echo=FALSE}
+counts_dow %>% 
+  tidyr::gather(key="Day of Week", value="counts", Sun:Sat) %>% 
+  tidyr::spread(Bridge, counts) %>% 
+  pander::pander(caption="Bike Counts by Day of Week and Bridge (2nd Format)",
+                 missing="")
+```
+
+Sample code: [tidy_counts.R](code/tidy_counts.R)
 
 # Resources
 1. [Dataframe Manipulation with tidyr](http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/)

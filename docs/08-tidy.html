@@ -239,7 +239,108 @@ $(document).ready(function () {
 <li>If not, why not? And how can we tidy it?</li>
 <li>Convert the total bike counts data to a wide format, with each row representing a day, and a column representing the total bike counts for each of the three bridges;</li>
 <li>Convert the above data frame in wide format back to long format.</li>
+<li>[Challenge] After tidying the bike counts, using functions in the <code>tidyr</code> package, create tables summarizing the average bike counts by bridge and day of week in two different formats:</li>
 </ol>
+<table style="width:76%;">
+<caption>Bike Counts by Day of Week and Bridge (1st Format)</caption>
+<colgroup>
+<col width="16%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="9%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Bridge</th>
+<th align="center">Sun</th>
+<th align="center">Mon</th>
+<th align="center">Tue</th>
+<th align="center">Wed</th>
+<th align="center">Thur</th>
+<th align="center">Fri</th>
+<th align="center">Sat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Hawthorne</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Tilikum</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<table style="width:49%;">
+<caption>Bike Counts by Day of Week and Bridge (2nd Format)</caption>
+<colgroup>
+<col width="19%" />
+<col width="16%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Day of Week</th>
+<th align="center">Hawthorne</th>
+<th align="center">Tilikum</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Fri</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Mon</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Sat</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Sun</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Thur</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Tue</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Wed</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Sample code: <a href="code/tidy_counts.R">tidy_counts.R</a></p>
 </div>
 <div id="resources" class="section level1">
 <h1>Resources</h1>

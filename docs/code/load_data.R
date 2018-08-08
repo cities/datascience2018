@@ -1,5 +1,6 @@
 library(readxl)
 library(lubridate)
+library(tidyverse)
 
 input_file <- "data/Hawthorne Tilikum Steel daily bike counts 073118.xlsx"
 bridge_name <- "Hawthorne"
