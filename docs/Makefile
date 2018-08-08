@@ -5,7 +5,7 @@ build:
 
 push: build
 	git status && \
-	git commit -a -m"Updated webiste" && \
+	git commit -a -m"Updated website" && \
 	git push
 
 unbind:
