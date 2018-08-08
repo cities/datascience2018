@@ -31,6 +31,8 @@ Download the script that generates the tables for the lesson [here](https://raw.
 # Exercise
 1. Are the bike counts data tidy data?
 1. If not, why not? And how can we tidy it?
+1. Convert the total bike counts data to a wide format, with each row representing a day, and a column representing the total bike counts for each of the three bridges;
+1. Convert the above data frame in wide format back to long format. 
 
 # Resources
 1. [Dataframe Manipulation with tidyr](http://swcarpentry.github.io/r-novice-gapminder/14-tidyr/)
