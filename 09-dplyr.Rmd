@@ -24,7 +24,7 @@ These all combine naturally with `group_by()` which allows you to perform any op
 dplyr is designed to abstract over how the data is stored. That means as well as working with local data frames, you can also work with remote database tables, using exactly the same R code. Install the dbplyr package then read `vignette("databases", package = "dbplyr")`.
 
 # Lesson
-1. [Data Transformation with dplyr](http://cities.github.io/datascience/transform-with-dplyr.html)
+1. [Data Transformation with dplyr](http://cities.github.io/datascience/data-manipulation-with-dplyr.html)
 
 ## Variable recoding with dplyr
 - `recode` and `recode_factor`: Replace numeric values based on their position, and character values by their name;
@@ -95,9 +95,10 @@ dd %>% group_by(HHFAMINC, income_cat) %>%
 # Exercise
 1. Filter days where there are missing values in bike counts and weather information. Count number of days with missing values on either bike counts or weather information.
 1. Calculate weekly, monthly, and annual bike counts from the daily bike counts data.
-1. Join the bike counts data with the weather data. Which type of joins works best here?
 1. With the [NHTS2009 travel diaries data](https://raw.githubusercontent.com/cities/datascience2018/master/data/NHTS2009_dd.csv), how do you cacluate total miles traveled (using any modes) and miles traveled by driving for each household (hint: the TRPMILES column contains information of trip distance for each member of a household).
 1. [Challenge] How do you compute the average household-level miles driving per capita by income categories (low, med, high)?
+1. Join the bike counts data with the weather data. Which type of joins works best here?
+1. Order daily bike counts by bridge in descending order and create a new column (variable) with the rank
 
 # Resources:
 1. [Dataframe Manipulation with dplyr](http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/)

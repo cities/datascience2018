@@ -27,7 +27,7 @@ ggplot2 is a grammar of graphics, a coherent system for describing and building 
 - [Use factors (for reorder & better labeling)](https://blog.rstudio.com/2016/08/31/forcats-0-1-0/)
 
 # Lesson
-1. [Data visulization with ggplot2](http://cities.github.io/datascience/visualize.html)
+1. [Data visulization with ggplot2](http://cities.github.io/datascience/data-visulization-with-ggplot2.html)
 1. [ggfortify - plot some popular R packages with ggplot2](https://github.com/sinhrks/ggfortify)
 1. [geom_map](http://ggplot2.tidyverse.org/reference/geom_map.html)
 1. [geom_sf - ggplot2 working with simple feature](http://ggplot2.tidyverse.org/reference/geom_map.html) and the [simple feature package](https://github.com/r-spatial/sf) for geo-spatial analysis
@@ -35,8 +35,8 @@ ggplot2 is a grammar of graphics, a coherent system for describing and building 
 1. [interactive maps and charts with R](http://www.htmlwidgets.org/showcase_leaflet.html)
 
 # Exercise
-1. Plot the daily bike counts for Hawthorne and Tilikum with ggplot2; Experiement with different options and select the one works best for you;
-1. Plot weekly, monthly, and annual bike counts for Hawthorne and Tilikum;
+1. Plot the daily bike counts with ggplot2; Experiement with different options (bar, line, etc) and select the one works best for you;
+1. Plot weekly, monthly, and annual bike counts for the three bridges;
 1. Now think about and try out different ways to plot weather information along with your daily bike counts (separately or together);
 1. You can combine time series stats and ggplot2/ggfortify to plot seasonal variation, trend and noise separately. See [here](http://rpubs.com/sinhrks/plot_tsstats) for an example of how to do this.
 
