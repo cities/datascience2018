@@ -25,11 +25,13 @@ Generally avoid using loops when you need to do Split-Apply-Combine, consider th
 1. `*aplly` functions and `plyr` package (non-tidyverse solution)
 
 # Lesson
-- [Data modeling with Split-Apply-Combine](http://cities.github.io/datascience/model-with-split-apply-combine-strategy.html)
+- [Data modeling with Split-Apply-Combine](http://cities.github.io/datascience/split-apply-combine-pattern-in-data-modeling.html)
 
 # Exercise
-1. Fit linear regression models of the daily bike counts on percipitation and max temperature, first for both bridges together and then for each bridge separately using the split-apply-combine pattern;
-1. When using ggfortify to plot weekly variation, trend and noise separately, you need to plot each bridge separately (sample code [here](https://raw.githubusercontent.com/cities/datascience2017/master/code/visualize_bikecounts.R)). Use the split-apply-combine to avoid having to repeat for each bridge.
+1. Fit linear regression models of the daily bike counts on percipitation, min and max temperature, first for all bridges together and then for each bridge separately using the split-apply-combine pattern;
+1. Extract the results from models in the above step: 
+    1. Compare the R-squares of the bridge-specific model. The bike traffic of which bridge has the highest correlation with percipitation, min and max temperature?
+    1. Which model has the largest percipitation coefficient? Temperature coefficient?
 
 # Resources:
 1. [purrr package](https://github.com/tidyverse/purrr)

@@ -48,7 +48,7 @@ The table below shows by date lecture topics, computer labs, and readings, and d
 1. [Data visulization with ggplot2](10-visualize.html)
 1. [Data modeling with Split-Apply-Combine](11-split-apply-combine.html)
 1. [Producing Reports With R Markdown](05-rmarkdown.html)
-1. Part II Wrap Up
+1. [Part II Wrap Up](12-where.html)
 
 ## Location and Time
 - Room: Portland State University Engineering Building 315

@@ -2,59 +2,59 @@ library(tidyverse)
 library(lubridate)
 require(readxl)
 
-(tilikum <- read_excel("data/Tilikum Crossing daily bike counts 2015-16 082117.xlsx", skip=1))
-hawthorne <- read_excel("data/Hawthorne Bridge daily bike counts 2012-2016 082117.xlsx")
-
-tilikum$bridge <- "Tilikum"
-hawthorne$bridge <- "Hawthorne"
-
-names(hawthorne) <- c("date", "westbound", "eastbound", "total", "bridge")
-
-bikecounts <- bind_rows(tilikum, hawthorne) %>% 
-  mutate(date=as_date(date))
-
-#bikecounts <- bikecounts %>% 
-#  gather(westbound, eastbound, key="direction", value="counts")
-
-#bikecounts %>% 
-#  gather(westbound, eastbound, key="direction", value="counts") -> bikecounts
-
-weather_raw <- read_csv("data/NCDC-CDO-PortlandOR.csv")
-weather_df <- weather_raw %>% 
-  filter(STATION=="USC00356750") %>% 
-  transmute(date=DATE, PRCP, TMIN=as.numeric(TMIN), TAVG=as.numeric(TAVG), TMAX=as.numeric(TMAX), SNOW)
-
-bikecounts <- left_join(bikecounts, weather_df, by="date")
+# load bike counts & weather data
+source("code/load_data.R")
 
 bikecounts <- bikecounts %>% 
-  mutate(week=date - wday(date) + 1,
-         month=date - mday(date) + 1,
-         year=date - yday(date) + 1)
+  mutate(DATE=as_date(date))
 
-#filter any days w/ missing values as they throw off the plot
-bikecounts <- bikecounts %>%
-  filter(complete.cases(eastbound, westbound, total))
+bikecounts <- left_join(bikecounts, weather_df, by="DATE")
 
-## generate summaries for plotting
-bikecounts_week <- bikecounts %>% 
-  group_by(bridge, week) %>% 
-  summarize(total=sum(total))
+bikecounts
 
-bikecounts_month <- bikecounts %>% 
-  group_by(bridge, month) %>% 
-  summarize(total=sum(total))
+bikecounts <- bikecounts %>% 
+  mutate(week=week(date, label=TRUE),
+         month=month(date, label=TRUE),
+         year=year(date))
 
-bikecounts_year <- bikecounts %>% 
-  group_by(bridge, year) %>% 
-  summarize(total=sum(total))
+bikecounts %>% 
+  group_by(name, month) %>% 
+  summarize(monthly_total=sum(total)) %>% 
+  ggplot() +
+  geom_line(aes(x=month, y=monthly_total, group=name, color=name))
 
 ggplot(bikecounts) +
-  geom_line(aes(x=date, y=total, color=bridge)) +
-  scale_y_log10()
+  geom_col(aes(x=date, y=total, color=name))
 
-ggplot(bikecounts_week) +
-  geom_line(aes(x=week, y=total, color=bridge)) +
-  scale_y_log10()
+ggplot(bikecounts) +
+  geom_boxplot(aes(x=month, y=total))
+
+bikecounts %>% 
+    group_by(name, week) %>% 
+    summarize(weekly_total=sum(total)) %>% 
+    ggplot() +
+    geom_line(aes(x=week, y=weekly_total, color=name))
+
+bikecounts_weather <- bikecounts %>% 
+  mutate(DATE=as_date(date)) %>% 
+  left_join(weather)
+
+bikecounts_weather%>% 
+  ggplot() +
+  geom_col(aes(x=DATE, y=total)) +
+  #geom_line(aes(x=DATE, y=TMIN * 100)) +
+  #scale_y_continuous(sec.axis = sec_axis(~./100, name="Temp (F)")) +
+  facet_wrap(~name)
+
+ggplot() +
+  geom_col(data=bikecounts, aes(x=as_date(date), y=total)) +
+  geom_line(data=weather, aes(x=DATE, y=TMIN))
+
+bikecounts_weather %>% 
+  ggplot() +
+  geom_smooth(aes(x=TMIN, y=total, group=name)) +
+  geom_smooth(aes(x=TMAX, y=total, group=name)) +
+  facet_wrap(~name)
 
 ggplot(bikecounts_month) +
   geom_line(aes(x=month, y=total, color=bridge)) +
@@ -76,8 +76,9 @@ ggplot(bikecounts) +
 #install.packages("ggfortify")
 
 library(ggfortify)
-prcp_ts <- ts(weather_df$PRCP, start=2011, frequency = 365)
-autoplot(stl(prcp_ts, s.window = 'periodic'), ts.colour = 'blue')
+hawthorne_bc <- bikecounts %>% filter(name=="Hawthorne") %>% pull(total)
+hawthorne_ts <- ts(hawthorne_bc, start=2012, frequency = 365)
+autoplot(stl(hawthorne_ts, s.window = 'periodic'), ts.colour = 'blue')
 
-tmax_ts <- ts(weather_df$TMAX, start=2011, frequency = 365)
+tmax_ts <- ts(weather$TMAX, start=2011, frequency = 365)
 autoplot(stl(tmax_ts, s.window = 'periodic'), ts.colour = 'blue')

@@ -12,11 +12,23 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 1. [R Markdown gallery](http://rmarkdown.rstudio.com/gallery.html)
-1. [Introduce RMarkdown](http://cities.github.io/datascience/rmarkdown.html)
 1. [Software Carpentry R Markdown lesson](http://swcarpentry.github.io/r-novice-gapminder/15-knitr-markdown/)
-1. [More R Markdown](http://r4ds.had.co.nz/r-markdown.html)
-1. [Writing Vignettes with R Markdown](http://r-pkgs.had.co.nz/vignettes.html)
+1. Beyond documents
+    1. [Write Books](https://bookdown.org/yihui/bookdown/): [example](http://github.com/cities/datascience)
+    1. [Create websites with blogdown](https://bookdown.org/yihui/blogdown/): [example](https://github.com/lmwang9527/personal_website)
+    1. [Presentation](https://github.com/yihui/xaringan): [example](https://github.com/hotdeck/acsp2017/)
+    1. [Create dashboards with flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/)
+    1. [Writing Vignettes for a package](http://r-pkgs.had.co.nz/vignettes.html): [example](https://github.com/cities-lab/VETravelDemandMM/tree/master/vignettes)
+    1. [Create a package website](http://r-pkgs.had.co.nz/vignettes.html): [example](https://jamgreen.github.io/lehdr/)
+1. [Host your html files with Github Pages](https://pages.github.com/)
+
+# Exercise
+1. Create a R Markdown report for your class project that includes description and code for each of the import, tidy, transform, visualize and modeling steps; save to the docs folder of your RStudio project and render it into html;
+1. Select three of your best graphics you created in the Visualization session and create a dashboard for them;
+1. Commit your report and dashboard and push them to your github repo
+1. Setup your GitHub Pages for your report and dashboard, add the URL of your Github Pages to [the wiki page of datascience2018 repo](https://github.com/cities/datascience2018/wiki)
 
 # Resources
 1. [R Markdown from RStudio](http://rmarkdown.rstudio.com/lesson-1.html)
 1. [R Markdown Cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+1. [R Markdown Basics](http://r4ds.had.co.nz/r-markdown.html)

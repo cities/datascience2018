@@ -227,14 +227,18 @@ $(document).ready(function () {
 <div id="lesson" class="section level1">
 <h1>Lesson</h1>
 <ul>
-<li><a href="http://cities.github.io/datascience/model-with-split-apply-combine-strategy.html">Data modeling with Split-Apply-Combine</a></li>
+<li><a href="http://cities.github.io/datascience/split-apply-combine-pattern-in-data-modeling.html">Data modeling with Split-Apply-Combine</a></li>
 </ul>
 </div>
 <div id="exercise" class="section level1">
 <h1>Exercise</h1>
 <ol style="list-style-type: decimal">
-<li>Fit linear regression models of the daily bike counts on percipitation and max temperature, first for both bridges together and then for each bridge separately using the split-apply-combine pattern;</li>
-<li>When using ggfortify to plot weekly variation, trend and noise separately, you need to plot each bridge separately (sample code <a href="https://raw.githubusercontent.com/cities/datascience2017/master/code/visualize_bikecounts.R">here</a>). Use the split-apply-combine to avoid having to repeat for each bridge.</li>
+<li>Fit linear regression models of the daily bike counts on percipitation, min and max temperature, first for all bridges together and then for each bridge separately using the split-apply-combine pattern;</li>
+<li>Extract the results from models in the above step:
+<ol style="list-style-type: decimal">
+<li>Compare the R-squares of the bridge-specific model. The bike traffic of which bridge has the highest correlation with percipitation, min and max temperature?</li>
+<li>Which model has the largest percipitation coefficient? Temperature coefficient?</li>
+</ol></li>
 </ol>
 </div>
 <div id="resources" class="section level1">
