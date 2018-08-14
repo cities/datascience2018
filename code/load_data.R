@@ -42,4 +42,8 @@ bikecounts %>%
   group_by(name, month(ym)) %>% 
   summarize(avg_monthly_counts=mean(total_monthly_counts))
 
+# read from csv
 weather <- read_csv("data/NCDC-CDO-USC00356750.csv")
+
+# read from fwf
+weather_fwf <- read_table("data/NCDC-CDO-USC00356750.txt", comment="--")

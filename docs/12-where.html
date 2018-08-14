@@ -11,7 +11,7 @@
 
 
 
-<title>Split-Apply-Combine Pattern in Data Modeling</title>
+<title></title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -203,52 +203,51 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Split-Apply-Combine Pattern in Data Modeling</h1>
 
 </div>
 
 
-<div id="split-apply-combine" class="section level1">
-<h1>Split-Apply-Combine</h1>
-<p><img alt="Split-Apply-Combine" style="border-width:0" src="http://swcarpentry.github.io/r-novice-gapminder/fig/12-plyr-fig1.png" /></p>
-<p>A common analytical pattern is to:</p>
-<ul>
-<li>split data into pieces,</li>
-<li>apply some function to each piece,</li>
-<li>combine the results back together again.</li>
-</ul>
-<p>Generally avoid using loops when you need to do Split-Apply-Combine, consider these alternatives instead:</p>
+<div id="where-to-go-from-here" class="section level1">
+<h1>Where to go from here</h1>
+<p>Practice makes perfection. Use what you learned here as much as possible in your own research and work, even though you may not master everything first off. Once you find a solution to your data science problem, think whether it conforms the [Best practices for data science]; If not, can you improve your solution according to the best practices?</p>
+<div id="noticeable-features-not-covered" class="section level2">
+<h2>Noticeable features not covered</h2>
+<p>R is getting more powerful all the time. There are many exciting features and packages that we have not covered and many more are emerging. Below are a few features I think are worth mentioning.</p>
+<div id="creating-r-packages" class="section level3">
+<h3>Creating R packages</h3>
+<p>It is probably the easiest to share your R code with others by creating a R package for it. It is not as intimidating as it sounds. Fong Chun Chan wrote <a href="http://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html">a tutorial for creating your first R package</a>. For a more comprehensive resource, check out Hadley Wickham’s <a href="R%20packages">R Packages</a>.</p>
+</div>
+<div id="automate-testing-your-code" class="section level3">
+<h3>Automate testing your code</h3>
+<p>It is always a good idea to test your code with simple inputs to make sure it work correctly before adding complexity and deploying it for actual work (see best practices for data science 5). There are ways to automate the tests, so you will not forget to run the tests. Hadley Wickham writes about <a href="http://r-pkgs.had.co.nz/tests.html">testing for R packages</a> and <a href="https://github.com/r-lib/testthat"><code>testthat</code> is a R package specifically to make testing</a>. And if you use GitHub or other popular public version control website, it is possible to use Travis-CI to do “continuous integration” tests for your code. Julia Silge has <a href="https://juliasilge.com/blog/beginners-guide-to-travis/">a nice tutorial for beginners</a>.</p>
+</div>
+<div id="automate-your-workflow" class="section level3">
+<h3>Automate your workflow</h3>
+<p>If you are seasoned programmer and are familiar with the <code>make</code> toolchain, you can use it to automate your workflow too. Professor Jenny Bryan provides <a href="http://stat545.com/automation00_index.html">a tutorial</a> for her STAT 545 class.</p>
+<p>A more research-oriented solution is to use <a href="https://github.com/richfitz/remake">the <code>remake</code> package</a>:</p>
+<blockquote>
+<p>The idea here is to re-imagine a set of ideas from make but built for R. Rather than having a series of calls to different instances of R (as happens if you run make on R scripts), the idea is to define pieces of a pipeline within an R session. Rather than being language agnostic (like make must be), remake is unapologetically R focused.</p>
+</blockquote>
+<p><code>remake</code> is still under heavy development and is not yet available on CRAN. You will have to install it from github:</p>
+<pre class="r"><code>library(devtools)
+install_github(&quot;richfitz/remake&quot;)</code></pre>
+</div>
+<div id="develop-interactive-apps-with-shiny" class="section level3">
+<h3>Develop interactive apps with Shiny</h3>
+<p>Shiny allows you to develop interactive apps that run on top of R. Again Prof Jenny Bryan has a nice <a href="http://stat545.com/shiny00_index.html">tutorial for getting started with Shiny</a>.</p>
+</div>
+</div>
+<div id="where-to-find-help" class="section level2">
+<h2>Where to find help</h2>
 <ol style="list-style-type: decimal">
-<li>Entry level: <code>dplyr::group_by()</code></li>
-<li>General approach: nesting</li>
-<li><code>*aplly</code> functions and <code>plyr</code> package (non-tidyverse solution)</li>
+<li>Help documents;</li>
+<li>Package vignett and manual;</li>
+<li><a href="http://www.cookbook-r.com/">R cookbook</a>;</li>
+<li><a href="http://stackoverflow.com/questions/tagged/r">Stack Overflow</a> and <a href="https://stats.stackexchange.com/">Cross Validated</a>, A Q&amp;A community for programming and statistics;</li>
+<li>Google is your friend;</li>
+<li>Ask a person who may know.</li>
 </ol>
 </div>
-<div id="lesson" class="section level1">
-<h1>Lesson</h1>
-<ul>
-<li><a href="http://cities.github.io/datascience/split-apply-combine-pattern-in-data-modeling.html">Data modeling with Split-Apply-Combine</a></li>
-</ul>
-</div>
-<div id="exercise" class="section level1">
-<h1>Exercise</h1>
-<ol style="list-style-type: decimal">
-<li>Fit linear regression models of the daily bike counts on percipitation, min and max temperature, first for all bridges together and then for each bridge separately using the split-apply-combine pattern;</li>
-<li>Extract the results from models in the above step:
-<ol style="list-style-type: decimal">
-<li>Compare the R-squares of the bridge-specific model. The bike traffic of which bridge has the highest correlation with percipitation, min and max temperature?</li>
-<li>Which model has the largest percipitation coefficient? Temperature coefficient?</li>
-</ol></li>
-</ol>
-<p><a href="code/model.R">Sample code</a></p>
-</div>
-<div id="resources" class="section level1">
-<h1>Resources:</h1>
-<ol style="list-style-type: decimal">
-<li><a href="https://github.com/tidyverse/purrr">purrr package</a></li>
-<li><a href="https://jennybc.github.io/purrr-tutorial/">purrr tutorial</a></li>
-<li><a href="http://swcarpentry.github.io/r-novice-gapminder/12-plyr/">Software Carpentry lesson on Split-Apply-Combine</a></li>
-</ol>
 </div>
 
 

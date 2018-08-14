@@ -24,3 +24,5 @@ http://cities.github.io/datascience/import.html
 1. [Challenge] Import the iris dataset in Stata data format [iris.dta](data/iris.dta);
 1. For those already familiar with R, create a R script that loads, cleans, and visualizes the bike counts data as well as temperature and precipitation data (using data from Weather Station `USC00356750`); <p>
 for those not yet familiar with R, think about how you would go about doing these tasks with the software you are most comfortable with.
+
+[Sample code](code/load_data.R)

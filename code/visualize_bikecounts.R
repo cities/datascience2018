@@ -42,8 +42,8 @@ bikecounts_weather <- bikecounts %>%
 bikecounts_weather%>% 
   ggplot() +
   geom_col(aes(x=DATE, y=total)) +
-  #geom_line(aes(x=DATE, y=TMIN * 100)) +
-  #scale_y_continuous(sec.axis = sec_axis(~./100, name="Temp (F)")) +
+  geom_line(aes(x=DATE, y=TMIN * 100)) +
+  scale_y_continuous(sec.axis = sec_axis(~./100, name="Temp (F)")) +
   facet_wrap(~name)
 
 ggplot() +
@@ -82,3 +82,45 @@ autoplot(stl(hawthorne_ts, s.window = 'periodic'), ts.colour = 'blue')
 
 tmax_ts <- ts(weather$TMAX, start=2011, frequency = 365)
 autoplot(stl(tmax_ts, s.window = 'periodic'), ts.colour = 'blue')
+
+
+
+## hypothetically, what if our data is un-tidy
+bikecounts_wide <- bikecounts %>%
+  select(date, name, total) %>% 
+  mutate(date=as_date(date)) %>% 
+  spread(name, total)
+
+ggplot(bikecounts_wide) +
+  geom_line(aes(x=date, y=Hawthorne, color="red")) +
+  geom_line(aes(x=date, y=Steel, color="blue"))+
+  geom_line(aes(x=date, y=Tilikum, color="green"))
+
+ggplot(bikecounts) +
+  geom_line(aes(x=date, y=total, color=name))
+
+## directlabels
+install.packages("directlabels")
+library(directlabels)
+
+bikecounts %>% 
+  mutate(name=factor(name, 
+                     levels=c("Hawthorne", "Steel", "Tilikum"))) %>% 
+  ggplot(aes(x=date, y=total, color=name)) +
+  geom_line() +
+  geom_dl(aes(label = name), method="smart.grid")
+
+
+weather %>% 
+  gather(TMIN, TMAX, key="measure", value="temp") %>% 
+  ggplot(aes(x=DATE, y=temp, color=measure)) +
+  geom_smooth() + scale_colour_discrete(guide = 'none') +
+  geom_dl(aes(label = measure), method="last.qp")
+
+bikecounts %>% 
+  mutate(name=factor(name, 
+                     levels=c("Hawthorne", "Steel", "Tilikum"))) %>% 
+  ggplot(aes(x=date, y=total, color=name)) +
+  geom_line() +
+  geom_dl(aes(label = name), method="smart.grid")
+

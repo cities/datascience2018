@@ -100,6 +100,8 @@ dd %>% group_by(HHFAMINC, income_cat) %>%
 1. Join the bike counts data with the weather data. Which type of joins works best here?
 1. Order total daily bike counts by bridge in descending order, create a new column (variable) containing the rank, and then show the top 3 days for each bridge
 
+[Sample code](code/transform.R)
+
 # Resources:
 1. [Dataframe Manipulation with dplyr](http://swcarpentry.github.io/r-novice-gapminder/13-dplyr/)
 1. [Data Wrangling Cheat sheet](https://www.rstudio.com/wp-content/uploads/2015/02/data-wrangling-cheatsheet.pdf)

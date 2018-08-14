@@ -33,6 +33,8 @@ Generally avoid using loops when you need to do Split-Apply-Combine, consider th
     1. Compare the R-squares of the bridge-specific model. The bike traffic of which bridge has the highest correlation with percipitation, min and max temperature?
     1. Which model has the largest percipitation coefficient? Temperature coefficient?
 
+[Sample code](code/model.R)
+
 # Resources:
 1. [purrr package](https://github.com/tidyverse/purrr)
 1. [purrr tutorial](https://jennybc.github.io/purrr-tutorial/)

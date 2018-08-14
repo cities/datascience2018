@@ -40,6 +40,8 @@ ggplot2 is a grammar of graphics, a coherent system for describing and building 
 1. Now think about and try out different ways to plot weather information along with your daily bike counts (separately or together);
 1. You can combine time series stats and ggplot2/ggfortify to plot seasonal variation, trend and noise separately. See [here](http://rpubs.com/sinhrks/plot_tsstats) for an example of how to do this.
 
+[Sample code](code/visualize_bikecounts.R)
+
 # Resources:
 1. [ggplot2 tutorial by Dr. Jenny Bryan](https://github.com/jennybc/ggplot2-tutorial/blob/master/ggplot2-tutorial-slides/ggplot2-tutorial-slides.pdf)
 1. [R4DS Graphics for communication](http://r4ds.had.co.nz/graphics-for-communication.html)
